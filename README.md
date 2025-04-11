@@ -14,7 +14,7 @@ Trail.
 DayZ Servers.
 - At the moment I have Livonia and Sakhal up and running, with
 Chernarus on the way soon!
-- [www.discord.gg/6NFd2cx9KU]
+- http://www.discord.gg/6NFd2cx9KU
 
 <iframe src="https://discord.com/widget?id=1113078006278275184&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
@@ -27,7 +27,7 @@ of your Auto Location.
 ### ZBot
 -  The all-seeing, all-doing powerhouse that keeps
 the God's of Z's server running day in and day out.
-- [www.discord.gg/8J5F9KjkS6]
+- http://www.discord.gg/8J5F9KjkS6
 
 <iframe src="https://discord.com/widget?id=1343750278792351838&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
@@ -37,7 +37,7 @@ the God's of Z's server running day in and day out.
 ### Nitrado
 - https://server.nitrado.net/eng/donations/donate2/5301837/0
 ### Patreon
-- patreon.com/CAK3D
+- https://www.patreon.com/CAK3D
 
 ## Education
 ###Self Taught
