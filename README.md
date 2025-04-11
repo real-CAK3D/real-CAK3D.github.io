@@ -1,4 +1,3 @@
-# real-CAK3D.github.io #
 Host Site for ꧁ᙅᗣҜӠᙃ꧂ applications.
 
 ## ꧁ᙅᗣҜӠᙃ꧂
@@ -17,6 +16,8 @@ DayZ Servers.
 Chernarus on the way soon!
 - [www.discord.gg/6NFd2cx9KU]
 
+<iframe src="https://discord.com/widget?id=1113078006278275184&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
 ### Sullivan Connect
 - Sullivan Connect is your trusty shop companion, 
 designed to streamline the day-to-day operations 
@@ -28,8 +29,15 @@ of your Auto Location.
 the God's of Z's server running day in and day out.
 - [www.discord.gg/8J5F9KjkS6]
 
+<iframe src="https://discord.com/widget?id=1343750278792351838&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
+## DONATIONS
+### Paypal
+- https://paypal.me/CAK3D?country.x=US&locale.x=en_US
+
 ## Education
-- Self Taught, still learning day to day.
+###Self Taught
+- Still learning day to day.
 
 ## Experience
 ### Cannabis Cultivation
@@ -44,4 +52,9 @@ the God's of Z's server running day in and day out.
 - 3 years
 ### Mechanic
 - 8 years
-  
+
+## SOCIALS
+### X
+- http://x.com/_CAK3D_
+
+  # real-CAK3D.github.io #
