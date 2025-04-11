@@ -57,4 +57,11 @@ the God's of Z's server running day in and day out.
 ### X
 - http://x.com/_CAK3D_
 
+<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+    new Crate({
+        server: '1113078006278275184', // ꧁ᙃᥲყⱿ ᙅᗣҜӠᙃ꧂
+        channel: '1360089441057767507' // #external
+    })
+</script>
+
   # real-CAK3D.github.io #
