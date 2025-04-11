@@ -34,6 +34,10 @@ the God's of Z's server running day in and day out.
 ## DONATIONS
 ### Paypal
 - https://paypal.me/CAK3D?country.x=US&locale.x=en_US
+### Nitrado
+- https://server.nitrado.net/eng/donations/donate2/5301837/0
+### Patreon
+- patreon.com/CAK3D
 
 ## Education
 ###Self Taught
