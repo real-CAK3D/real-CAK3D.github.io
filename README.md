@@ -39,6 +39,8 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 <p align="left">Life’s too short to stick to one lane. Here’s what fuels my fire:
 
 Gaming: I’m deep into DayZ (building servers and surviving), GTA V, Session Skate Sim, and Ghost of Tsushima. Expect me to nerd out over open-world chaos or samurai vibes.
+![PlayStation Network](https://img.shields.io/badge/PSN-%230070D1.svg?style=plastic&logo=Playstation&logoColor=white)
+![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=plastic&logo=steam&logoColor=white)
 
 Music: Always got Spotify blasting, from lo-fi to trap to in your fave DnB. I create my own tracks using my Boss RC-505 Loopstation and MacBook, layering beats like I layer code. I’ve promoted and curated music festivals, handpicking artists and crafting immersive vibes that blend sound, visuals, and community. From underground raves to open-air gatherings, I’ve attended countless festivals, soaking in the energy and channeling it into my own creations.
 
@@ -47,6 +49,8 @@ Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, snowboarding
 Creative Arts: Basic projection mapping for trippy visuals, graffiti-inspired designs, and CAD for precision projects. GIMP is my go-to for quick edits.
 
 Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to dive into Raspberry Pi and Blender for new creations.
+![AMD](https://img.shields.io/badge/AMD-%23000000.svg?style=plastic&logo=amd&logoColor=white)
+![nVIDIA](https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=plastic&logo=nVIDIA&logoColor=white)
 </p>
 
 <div align="left">
@@ -165,6 +169,7 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 <p align="left">-  The all-seeing, all-doing powerhouse that keeps<br>the God's of Z's server running day in and day out.<br>- Backup bot for CAK3DBot.</p>
 
 <iframe src="https://discord.com/widget?id=1343750278792351838&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
 ###
 
 <p align="left">All of the following programs were used in the making of these projects.</p>
@@ -176,6 +181,7 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   <img width="12" />
   <img src="https://cdn.simpleicons.org/nodedotjs/339933" height="40" alt="nodejs logo"  />
   <img width="12" />
+  ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=plastic&logo=nodemon&logoColor=%BBDEAD)
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="40" alt="npm logo"  />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/discordjs/discordjs-original.svg" height="40" alt="discordjs logo"  />
@@ -238,6 +244,8 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 </div>
 
 ###
+
+[![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/CAK3D) 
 
 <p align="left">Nitrado<br>- https://server.nitrado.net/eng/donations/donate2/5301837/0</p>
 
