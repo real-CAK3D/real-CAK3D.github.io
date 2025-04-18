@@ -1,6 +1,8 @@
 <img align="left" src="https://visitor-badge.laobi.icu/badge?page_id=real-CAK3D.real-CAK3D&left_color=yellow&right_color=seagreen"  />
 
+<div align="right">
 Host Site for ꧁ᙅᗣҜӠᙃ꧂ applications.
+</div>
 
 <h3 align="center">Hello, as you might have already noticed, I go by</h3>
 
@@ -222,7 +224,7 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 </div>
 
 <div align="center">
-  ![snake gif](https://github.com/real-CAK3D/real-CAK3D/blob/output/github-snake-dark.svg)
+  ![snake](https://github.com/real-CAK3D/real-CAK3D/blob/output/github-snake-dark.svg)
 </div>
 
  # real-CAK3D.github.io #
