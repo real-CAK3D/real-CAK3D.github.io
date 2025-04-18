@@ -1,38 +1,25 @@
 <img align="left" src="https://visitor-badge.laobi.icu/badge?page_id=real-CAK3D.real-CAK3D&left_color=yellow&right_color=seagreen"  />
 
-###
 Host Site for ꧁ᙅᗣҜӠᙃ꧂ applications.
 
 <h3 align="center">Hello, as you might have already noticed, I go by</h3>
 
-###
-
 <h1 align="center">꧁ᙅᗣҜӠᙃ꧂</h1>
-
-###
 
 <div align="right">
   <img src="https://github-readme-stats.vercel.app/api?username=real-CAK3D&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=gruvbox&locale=en&hide_border=false" height="150" alt="stats graph"  />
   <img src="https://streak-stats.demolab.com?user=real-CAK3D&locale=en&mode=daily&theme=gruvbox&hide_border=false&border_radius=5" height="150" alt="streak graph"  />
 </div>
 
-###
-
 <div align="center">
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linktree/default.svg" width="52" height="40" alt="linktree logo"  />
 </div>
 
-###
-
 <h3 align="left">About me :</h3>
-
-###
 
 <p align="left">- I like to code—mostly whipping up custom Discord bots and <br>tweaking DayZ servers for fun. <br>- On my free time I lightweight-overnight-hike the Appalachian <br>Trail.<br>- I FIX CAR FOR MONIES ! !
   
 I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you name it—and I live for music, always spinning tracks on Spotify, creating my own works or attending concerts or festivals. My creative spark extends to projection mapping, music production, and even CAD and projection mapping designs, all fueled by a relentless curiosity and a DIY ethos.</p>
-
-###
 
 <h3 align="left">HOBBIES :</h3>
 
@@ -65,17 +52,11 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gimp/gimp-original.svg" height="40" alt="gimp logo"  />
 </div>
 
-###
-
 <p align="left"></p>
-
-###
 
 <div align="left">
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="52" height="40" alt="instagram logo"  />
 </div>
-
-###
 
 <div align="left">
   <a href="http://x.com/_CAK3D_" target="_blank">
@@ -83,13 +64,9 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   </a>
 </div>
 
-###
-
 <div align="left">
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/youtube/default.svg" width="52" height="40" alt="youtube logo"  />
 </div>
-
-###
 
 <div align="left">
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitch/default.svg" width="52" height="40" alt="twitch logo"  />
@@ -103,15 +80,9 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   </a>
 </div>
 
-###
-
 <h2 align="left">PROJECTS :</h2>
 
-###
-
 <p align="left">Most everything I've coded has been with these platforms. They've been quite straight forward and ive enjoyed using them, bringing communities to life with interactive features. My DayZ server tweaks are all about immersive, glitch-free experiences.</p>
-
-###
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
@@ -131,32 +102,21 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 <h3 align="left">CAK3DBot</h3>
 
-###
-
 <div align="center">
   <a href="discord.gg/6NFd2cx9KU" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo"  />
   </a>
 </div>
 
-###
-
 <p align="left">- A Discord Server Bot for the ꧁ᙃᥲყⱿ ᙅᗣҜӠᙃ꧂ Discord and<br>DayZ Servers.<br>- At the moment I have Livonia and Sakhal up and running, with<br>Chernarus on the way soon!<br>- The bot is still a work in progress and will most likley be finished end of 2025.</p>
 
 <iframe src="https://discord.com/widget?id=1113078006278275184&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-###
 
 <h3 align="left">Sullivan Connect</h3>
 
-###
-
 <p align="left">- Sullivan Connect is your trusty shop companion, <br>designed to streamline the day-to-day operations <br>of your Auto Location. <br>- Full inventory and re-stock system.<br>- Interactive "Team" point system.<br>- Private Bot ( no link available )</p>
 
-###
-
 <h3 align="left">ZBot</h3>
-
-###
 
 <div align="center">
   <a href="http://www.discord.gg/8J5F9KjkS6" target="_blank">
@@ -164,17 +124,11 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   </a>
 </div>
 
-###
-
 <p align="left">-  The all-seeing, all-doing powerhouse that keeps<br>the God's of Z's server running day in and day out.<br>- Backup bot for CAK3DBot.</p>
 
 <iframe src="https://discord.com/widget?id=1343750278792351838&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
-###
-
 <p align="left">All of the following programs were used in the making of these projects.</p>
-
-###
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=js" height="40" alt="javascript logo"  />
@@ -187,14 +141,10 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/discordjs/discordjs-original.svg" height="40" alt="discordjs logo"  />
 </div>
 
-###
-
 <h2 align="left">CREATIVE TECH :</h2> 
 
 
 <p align="left">From projection mapping to music production on my Boss RC-505 and Macbook Air, I blend visuals and sound, creating my own perspective of the world. My GMK Tec M7 NUCbox is my go-to for DayZ editor builds—small but mighty!</p>
-
-###
 
 <h2 align="left">EDUCATION :</h2>
 
@@ -202,11 +152,7 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 <p align="left">Self Taught<br>- Coding, music, and more—learned through trial, error, and endless curiosity..<br>Highschool Diploma</p>
 
-###
-
 <h3 align="left">Experience</h3>
-
-###
 
 <p align="left">Cannabis Cultivation<br>- 20+ years.
   Mastered the art of growing, from soil to harvest.
@@ -225,17 +171,11 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   <br>Mechanic<br>- 8 years.
   Fixing cars for a living, from diagnostics to full rebuilds. I drive a Subaru WRX, so I live for performance.</p>
 
-###
-
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=real-CAK3D&radius=16&theme=gruvbox&area=true&order=5&custom_title=%20%EA%A7%81%E1%99%85%E1%97%A3%D2%9C%D3%A0%E1%99%83%EA%A7%82's%20Contribution%20Graph" height="300" alt="activity-graph graph"  />
 </div>
 
-###
-
 <h2 align="left">DONATIONS :</h2>
-
-###
 
 <div align="center">
   <a href="https://paypal.me/CAK3D?country.x=US&locale.x=en_US" target="_blank">
@@ -243,17 +183,11 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   </a>
 </div>
 
-###
-
 [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/CAK3D) 
 
 <p align="left">Nitrado<br>- https://server.nitrado.net/eng/donations/donate2/5301837/0</p>
 
-###
-
 <h2 align="left">SUBSCRIPTIONS :</h2>
-
-###
 
 <div align="center">
   <a href="https://www.patreon.com/CAK3D" target="_blank">
@@ -261,13 +195,9 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   </a>
 </div>
 
-###
-
 <h2 align="left">COLLABORATE :</h2>
 
 <p align="left">Got an idea for a bot, server, or project? Want to talk cars, code, or cosmic mysteries? Let’s layer some unreal magic together, CAK3D-style. There are still a few programs ide like to start/incorporate into some projects that I havent dabbled in yet. If you have any pros or cons about any of the below feel free to drop a message in the chat in the lower right corner of the page.</p>
-
-###
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
@@ -291,13 +221,9 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" height="30" alt="slack logo"  />
 </div>
 
-###
-
 <div align="center">
   ![snake gif](https://github.com/real-CAK3D/real-CAK3D/blob/output/github-snake-dark.svg)
 </div>
-
-###
 
  # real-CAK3D.github.io #
 
