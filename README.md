@@ -293,7 +293,9 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 ###
 
-<img src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/snake.svg" alt="Snake animation" />
+<div align="center">
+  ![snake gif](https://github.com/real-CAK3D/real-CAK3D/blob/output/github-snake-dark.svg)
+</div>
 
 ###
 
