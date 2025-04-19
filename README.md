@@ -1,9 +1,5 @@
 <img align="left" src="https://visitor-badge.laobi.icu/badge?page_id=real-CAK3D.real-CAK3D&left_color=yellow&right_color=seagreen"  />
 
-<div align="right">
-Host Site for ꧁ᙅᗣҜӠᙃ꧂ applications.
-</div>
-
 <h3 align="center">Hello, as you might have already noticed, I go by</h3>
 
 <h1 align="center">꧁ᙅᗣҜӠᙃ꧂</h1>
