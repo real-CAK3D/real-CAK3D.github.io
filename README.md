@@ -264,5 +264,5 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 </picture>
 
 <div align="right">
-Host Site for ꧁ᙅᗣҜӠᙃ꧂ applications.
+Host Site for ![](./image.svg) applications.
 </div>
