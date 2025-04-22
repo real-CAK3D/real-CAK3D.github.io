@@ -2,6 +2,11 @@
 
 <h3 align="center">Hello, as you might have already noticed, I go by</h3>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/master/logo.svg" width="300" height="100">
+</p>	
+<img src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/master/waves.svg" width="100%" height="150">
+
 <h1 align="center">꧁ᙅᗣҜӠᙃ꧂</h1>
 
 <div align="right">
