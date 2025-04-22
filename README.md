@@ -108,7 +108,7 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 <p align="left">- The Nitrado Servers created by ᙅᗣҜӠᙃ.</p>
 
-<a id="button329670795d6d464283c1760e3925ce45" style="text-decoration:none;background:#e0ec3c;font-size:18px;font-family:arial;cursor:pointer;color:#000000;padding:15px 30px;border:none" target="_blank" href="https://server.nitrado.net/eng/donations/donate2/5301837/0">NITRADO Donations</a>
+<a id="button329670795d6d464283c1760e3925ce45" style="text-decoration:none;background:#f2ec50;font-size:18px;font-family:arial;cursor:pointer;color:#000000;padding:15px 30px;border-color:#000000;border-style:solid;border-radius:3px;border-width:1px" target="_blank" href="https://server.nitrado.net/eng/donations/donate2/5301837/0">NITRADO Donations</a>
 <style>
     #button329670795d6d464283c1760e3925ce45:hover {
         background-color: #797a7c !important;
