@@ -98,6 +98,16 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 ###
 
+<h3 align="left">the ᙃᥲყⱿ ᙅᗣҜӠᙃ Nitrado Servers</h3>
+
+<div align="center">
+  <a href="discord.gg/6NFd2cx9KU" target="_blank">
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo"  />
+  </a>
+</div>
+
+<p align="left">- The Nitrado Servers created by ᙅᗣҜӠᙃ.</p>
+
 <h3 align="left">CAK3DBot</h3>
 
 <div align="center">
