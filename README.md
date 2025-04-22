@@ -100,32 +100,13 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 <h3 align="left">the ᙃᥲყⱿ ᙅᗣҜӠᙃ Nitrado Servers</h3>
 
-<a href="#" class="myButton">NITRADO Donation</a>
-
-.myButton {
-	box-shadow: 0px 1px 0px 0px #fff6af;
-	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-	background-color:#ffec64;
-	border-radius:6px;
-	border:1px solid #ffaa22;
-	display:inline-block;
-	cursor:pointer;
-	color:#333333;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffee66;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color:#ffab23;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
+<a id="button329670795d6d464283c1760e3925ce45" style="text-decoration:none;background:#e0ec3c;font-size:18px;font-family:arial;cursor:pointer;color:#000000;padding:15px 30px;border:none" target="_blank" href="https://server.nitrado.net/eng/donations/donate2/5301837/0">NITRADO Donations</a>
+<style>
+    #button329670795d6d464283c1760e3925ce45:hover {
+        background-color: #797a7c !important;
+        color: #fafafa !important;
+    }
+</style>
 
 <div align="center">
   <a href="discord.gg/6NFd2cx9KU" target="_blank">
