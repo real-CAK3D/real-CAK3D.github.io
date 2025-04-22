@@ -107,6 +107,10 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 </div>
 
 <p align="left">- The Nitrado Servers created by ᙅᗣҜӠᙃ.</p>
+<p>Want to book a DayZ Editor Build?</p>
+<!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1HngNEL6goNuJZbdsJSRgDCU-JKBKkS0nqnJARcsCUt-MNs53D58yN4zRUkcjzT2lG7gpJOg_-?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->
 
 <h3 align="left">CAK3DBot</h3>
 
