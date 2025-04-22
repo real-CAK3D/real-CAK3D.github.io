@@ -100,14 +100,6 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 <h3 align="left">the ᙃᥲყⱿ ᙅᗣҜӠᙃ Nitrado Servers</h3>
 
-<a id="button329670795d6d464283c1760e3925ce45" style="text-decoration:none;background:#e0ec3c;font-size:18px;font-family:arial;cursor:pointer;color:#000000;padding:15px 30px;border:none" target="_blank" href="https://server.nitrado.net/eng/donations/donate2/5301837/0">NITRADO Donations</a>
-<style>
-    #button329670795d6d464283c1760e3925ce45:hover {
-        background-color: #797a7c !important;
-        color: #fafafa !important;
-    }
-</style>
-
 <div align="center">
   <a href="discord.gg/6NFd2cx9KU" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo"  />
@@ -115,10 +107,14 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 </div>
 
 <p align="left">- The Nitrado Servers created by ᙅᗣҜӠᙃ.</p>
-<p>Want to book a DayZ Editor Build?</p>
-<!-- Google Calendar Appointment Scheduling begin -->
-<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1HngNEL6goNuJZbdsJSRgDCU-JKBKkS0nqnJARcsCUt-MNs53D58yN4zRUkcjzT2lG7gpJOg_-?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
-<!-- end Google Calendar Appointment Scheduling -->
+
+<a id="button329670795d6d464283c1760e3925ce45" style="text-decoration:none;background:#e0ec3c;font-size:18px;font-family:arial;cursor:pointer;color:#000000;padding:15px 30px;border:none" target="_blank" href="https://server.nitrado.net/eng/donations/donate2/5301837/0">NITRADO Donations</a>
+<style>
+    #button329670795d6d464283c1760e3925ce45:hover {
+        background-color: #797a7c !important;
+        color: #fafafa !important;
+    }
+</style>
 
 <h3 align="left">CAK3DBot</h3>
 
@@ -165,6 +161,11 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 
 <p align="left">From projection mapping to music production on my Boss RC-505 and Macbook Air, I blend visuals and sound, creating my own perspective of the world. My GMK Tec M7 NUCbox is my go-to for DayZ editor builds—small but mighty!</p>
+
+<p>Want to book a DayZ Editor Build?</p>
+<!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1HngNEL6goNuJZbdsJSRgDCU-JKBKkS0nqnJARcsCUt-MNs53D58yN4zRUkcjzT2lG7gpJOg_-?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->
 
 <h2 align="left">EDUCATION :</h2>
 
