@@ -258,6 +258,8 @@ Mechanic 🔧
 
 <div align="center">
 
+![Snake animation](https://github.com/madushadhanushka/github-readme/blob/output/github-contribution-snake.svg)
+
   ![Snake animation](https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/github-contribution-grid-snake-dark.svg)
   
 </div>
@@ -276,6 +278,10 @@ Mechanic 🔧
   <source media="(prefers-color-scheme: light)" srcset="github-snake.svg" />
   <img alt="github-snake" src="github-snake.svg" />
 </picture>
+
+<!-- Elfsight AI Chatbot | Untitled AI Chatbot -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-cf9691e7-f718-4ae7-9ef4-861ef7c11b55" data-elfsight-app-lazy></div>
 
 <div align="right">
 Host Site for ![](./image.svg) applications.
