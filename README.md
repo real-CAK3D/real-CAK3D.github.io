@@ -203,8 +203,17 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
   </a>
 </div>
 
-[![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/CAK3D) 
-<p align="left">Nitrado<br>- https://server.nitrado.net/eng/donations/donate2/5301837/0</p>
+<div align="left">
+  <a href="https://buymeacoffee.com/CAK3D" target="_blank">
+    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" width="52" height="40" alt="twitter logo"  />
+  </a>
+</div>
+
+<div align="left">
+  <a href="https://server.nitrado.net/eng/donations/donate2/5301837/0" target="_blank">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/0233b215-f944-4a19-a863-81202f30f4a9-profile_banner-480.png" width="52" height="40" alt="twitter logo"  />
+  </a>
+</div>
 
 <h2 align="left">SUBSCRIPTIONS :</h2>
 
