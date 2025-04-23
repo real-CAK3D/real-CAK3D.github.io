@@ -2,20 +2,11 @@
 
 <h3 align="center">Hello, as you might have already noticed, I go by</h3>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/main/logo.svg" width="300" height="100">
-</p>	
-<img src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/main/waves.svg" width="100%" height="150">
-
 <h1 align="center">꧁ᙅᗣҜӠᙃ꧂</h1>
 
-<div align="right">
+<div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=real-CAK3D&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=gruvbox&locale=en&hide_border=false" height="150" alt="stats graph"  />
   <img src="https://streak-stats.demolab.com?user=real-CAK3D&locale=en&mode=daily&theme=gruvbox&hide_border=false&border_radius=5" height="150" alt="streak graph"  />
-</div>
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linktree/default.svg" width="52" height="40" alt="linktree logo"  />
 </div>
 
 <h3 align="left">About me :</h3>
@@ -42,7 +33,7 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 ![AMD](https://img.shields.io/badge/AMD-%23000000.svg?style=plastic&logo=amd&logoColor=white)
 ![nVIDIA](https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=plastic&logo=nVIDIA&logoColor=white)
 </p>
-
+ <img src="https://img.shields.io/badge/AMD-%23000000.svg?style=plastic&logo=amd&logoColor=white"  />
 <div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openal/openal-original.svg" height="40" alt="openal logo"  />
   <img width="12" />
