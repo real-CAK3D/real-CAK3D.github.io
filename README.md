@@ -29,9 +29,8 @@ Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, snowboarding
 
 Creative Arts: Basic projection mapping for trippy visuals, graffiti-inspired designs, and CAD for precision projects. GIMP is my go-to for quick edits.
 
-Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to dive into Raspberry Pi and Blender for new creations.
-<img src="https://img.shields.io/badge/AMD-%23000000.svg?style=plastic&logo=amd&logoColor=white"  />
-<img src="https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=plastic&logo=nVIDIA&logoColor=white"  />
+Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.svg?style=plastic&logo=amd&logoColor=white"  /> NUCbox is a awesome for DayZ edits. It will be even more of a beast when I add on an 
+<img src="https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=plastic&logo=nVIDIA&logoColor=white"  /> graphics card. I’m also itching to dive into Raspberry Pi and Blender for new creations,  so this little machine will allow me to do allot.
 </p>
 
 <div align="left">
@@ -174,22 +173,30 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 <h3 align="left">Experience</h3>
 
-<p align="left">Cannabis Cultivation<br>- 20+ years.
-  Mastered the art of growing, from soil to harvest.
-  <br>CO2 Extraction<br>- 8+ years.
-  Specialized in extracting high-quality cannabis concentrates.
-  <br>Music Production<br>- 15+ years.
-  Producing tracks with a focus on layering and live looping
-  <br>Event Promotion<br>- 10+ years.
-  Creating precise designs for mechanical and creative projects.
-  <br>Programming<br>- 3 years.
-  JavaScript, Node.js, NPM, Discord.js. Comfortable with Visual Studio Code, Git, GitHub, GitHub Actions, MongoDB, Heroku.
-  <br>CAD<br>- 3 years.
-  Creating precise designs for mechanical and creative projects.
-  <br>Developement<br>- 5 years.
-  Dabbled in Unity, Unreal Engine, and DayZ editor and server builds.
-  <br>Mechanic<br>- 8 years.
-  Fixing cars for a living, from diagnostics to full rebuilds. I drive a Subaru WRX, so I live for performance.</p>
+<p align="left">Cannabis Cultivation 🌱
+
+20+ years. Mastered the art of growing, from soil to harvest.
+CO2 Extraction 🧪
+
+8+ years. Specialized in extracting high-quality cannabis concentrates.
+Music Production 🎵
+
+15+ years. Producing tracks with a focus on layering and live looping.
+Event Promotion 🎉
+
+10+ years. Creating precise designs for mechanical and creative projects.
+Programming 💻
+
+3 years. JavaScript, Node.js, NPM, Discord.js. Comfortable with Visual Studio Code, Git, GitHub, GitHub Actions, MongoDB, Heroku.
+CAD 📐
+
+3 years. Creating precise designs for mechanical and creative projects.
+Development 🎮
+
+5 years. Dabbled in Unity, Unreal Engine, and DayZ editor and server builds.
+Mechanic 🔧
+
+8 years. Fixing cars for a living, from diagnostics to full rebuilds. I drive a Subaru WRX, so I live for performance. 🚗💨</p>
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=real-CAK3D&radius=16&theme=gruvbox&area=true&order=5&custom_title=%20%EA%A7%81%E1%99%85%E1%97%A3%D2%9C%D3%A0%E1%99%83%EA%A7%82's%20Contribution%20Graph" height="300" alt="activity-graph graph"  />
@@ -205,13 +212,13 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 <div align="left">
   <a href="https://buymeacoffee.com/CAK3D" target="_blank">
-    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" width="52" height="40" alt="twitter logo"  />
+    <img src="https://play.google.com/store/apps/details?id=app.buymeacoffee&hl=en_ZA" width="52" height="40" alt="twitter logo"  />
   </a>
 </div>
 
 <div align="left">
   <a href="https://server.nitrado.net/eng/donations/donate2/5301837/0" target="_blank">
-    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/0233b215-f944-4a19-a863-81202f30f4a9-profile_banner-480.png" width="52" height="40" alt="twitter logo"  />
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FNitrado%2F&psig=AOvVaw38SI5FKRziRL3RAbkt7OSK&ust=1745472133120000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCI-cW07YwDFQAAAAAdAAAAABAJ" width="52" height="40" alt="twitter logo"  />
   </a>
 </div>
 
@@ -225,7 +232,7 @@ Tech Toys: My GMK Tec M7 NUCbox is a beast for DayZ edits, and I’m itching to 
 
 <h2 align="left">COLLABORATE :</h2>
 
-<p align="left">Got an idea for a bot, server, or project? Want to talk cars, code, or cosmic mysteries? Let’s layer some unreal magic together, CAK3D-style. There are still a few programs ide like to start/incorporate into some projects that I havent dabbled in yet. If you have any pros or cons about any of the below feel free to drop a message in the chat in the lower right corner of the page.</p>
+<p align="left">Got an idea for a bot, server, or project? 🤖 Want to talk cars 🚗, code 💻, or cosmic mysteries 🌌? Let’s layer some unreal magic together, CAK3D-style ✨. There are still a few programs I’d like to start/incorporate into some projects that I haven’t dabbled in yet. If you have any pros or cons about any of the below, feel free to drop a message in the chat in the lower right corner of the page 📩.</p>
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
