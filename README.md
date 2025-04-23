@@ -122,6 +122,12 @@ Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.sv
   </a>
 </div>
 
+<div align="right">
+  <a href="https://github.com/real-CAK3D/simple-sqlite" target="_blank">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=real-CAK3D&repo=simple-sqlite" width="52" height="40" alt="ReadMe Card"  />
+  </a>
+</div>
+
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=madushadhanushka&repo=simple-sqlite)](https://github.com/madushadhanushka/simple-sqlite)
 
 <p align="left">- A Discord Server Bot for the ꧁ᙃᥲყⱿ ᙅᗣҜӠᙃ꧂ Discord and<br>DayZ Servers.<br>- At the moment I have Livonia and Sakhal up and running, with<br>Chernarus on the way soon!<br>- The bot is still a work in progress and will most likley be finished end of 2025.</p>
