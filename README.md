@@ -123,8 +123,8 @@ Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.sv
 </div>
 
 <div align="right">
-  <a href="https://github.com/real-CAK3D/simple-sqlite" target="_blank">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=real-CAK3D&repo=simple-sqlite" width="52" height="40" alt="ReadMe Card"  />
+  <a href="https://github.com/real-CAK3D/CAK3DBot" target="_blank">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=real-CAK3D&repo=CAK3DBot" width="52" height="40" alt="ReadMe Card"  />
   </a>
 </div>
 
@@ -143,6 +143,12 @@ Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.sv
 <div align="center">
   <a href="http://www.discord.gg/8J5F9KjkS6" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo"  />
+  </a>
+</div>
+
+<div align="right">
+  <a href="https://github.com/real-CAK3D/CAK3DBot" target="_blank">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=real-CAK3D&repo=CAK3DBot" width="52" height="40" alt="ReadMe Card"  />
   </a>
 </div>
 
