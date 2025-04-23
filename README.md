@@ -212,13 +212,13 @@ Mechanic 🔧
 
 <div align="left">
   <a href="https://buymeacoffee.com/CAK3D" target="_blank">
-    <img src="https://play.google.com/store/apps/details?id=app.buymeacoffee&hl=en_ZA" width="52" height="40" alt="twitter logo"  />
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="CAK3D"  />
   </a>
 </div>
 
 <div align="left">
   <a href="https://server.nitrado.net/eng/donations/donate2/5301837/0" target="_blank">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FNitrado%2F&psig=AOvVaw38SI5FKRziRL3RAbkt7OSK&ust=1745472133120000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCI-cW07YwDFQAAAAAdAAAAABAJ" width="52" height="40" alt="twitter logo"  />
+    <img src="https://dabuttonfactory.com/button.png?t=Nitrado&f=Open+Sans-Bold&ts=26&tc=000&hp=45&vp=20&c=11&bgt=unicolored&bgc=dbdb17" width="52" height="40" alt="Nitrado logo"  />
   </a>
 </div>
 
