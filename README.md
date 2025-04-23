@@ -222,7 +222,7 @@ Mechanic 🔧
 
 <div align="center">
   <a href="https://server.nitrado.net/eng/donations/donate2/5301837/0" target="_blank">
-    <img src="https://dabuttonfactory.com/button.png?t=Nitrado&f=Open+Sans-Bold&ts=26&tc=000&hp=45&vp=20&c=11&bgt=unicolored&bgc=dbdb17" width="50" height="210" alt="Nitrado logo"  />
+    <img src="https://dabuttonfactory.com/button.png?t=Nitrado&f=Open+Sans-Bold&ts=26&tc=000&hp=45&vp=20&c=11&bgt=unicolored&bgc=dbdb17" width="210" height="50" alt="Nitrado logo"  />
   </a>
 </div>
 
