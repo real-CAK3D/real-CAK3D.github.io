@@ -56,7 +56,7 @@ Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.sv
   <a href="http://x.com/_CAK3D_" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg" width="52" height="40" alt="twitter logo"  />
   </a>
-</div>
+</div> 
 
 <div align="left">
   <a href="https://youtube.com/@real_cak3d?si=efRSapl-GOIus_0" target="_blank">
@@ -122,6 +122,8 @@ Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.sv
   </a>
 </div>
 
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=madushadhanushka&repo=simple-sqlite)](https://github.com/madushadhanushka/simple-sqlite)
+
 <p align="left">- A Discord Server Bot for the ꧁ᙃᥲყⱿ ᙅᗣҜӠᙃ꧂ Discord and<br>DayZ Servers.<br>- At the moment I have Livonia and Sakhal up and running, with<br>Chernarus on the way soon!<br>- The bot is still a work in progress and will most likley be finished end of 2025.</p>
 
 <iframe src="https://discord.com/widget?id=1113078006278275184&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
@@ -137,6 +139,8 @@ Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.sv
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo"  />
   </a>
 </div>
+
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=madushadhanushka&repo=differ)](https://github.com/madushadhanushka/differ)
 
 <p align="left">-  The all-seeing, all-doing powerhouse that keeps<br>the God's of Z's server running day in and day out.<br>- Backup bot for CAK3DBot.</p>
 
@@ -210,15 +214,15 @@ Mechanic 🔧
   </a>
 </div>
 
-<div align="left">
+<div align="center">
   <a href="https://buymeacoffee.com/CAK3D" target="_blank">
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="CAK3D"  />
   </a>
 </div>
 
-<div align="left">
+<div align="center">
   <a href="https://server.nitrado.net/eng/donations/donate2/5301837/0" target="_blank">
-    <img src="https://dabuttonfactory.com/button.png?t=Nitrado&f=Open+Sans-Bold&ts=26&tc=000&hp=45&vp=20&c=11&bgt=unicolored&bgc=dbdb17" width="52" height="40" alt="Nitrado logo"  />
+    <img src="https://dabuttonfactory.com/button.png?t=Nitrado&f=Open+Sans-Bold&ts=26&tc=000&hp=45&vp=20&c=11&bgt=unicolored&bgc=dbdb17" width="50" height="210" alt="Nitrado logo"  />
   </a>
 </div>
 
@@ -283,6 +287,4 @@ Mechanic 🔧
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
 <div class="elfsight-app-cf9691e7-f718-4ae7-9ef4-861ef7c11b55" data-elfsight-app-lazy></div>
 
-<div align="right">
-Host Site for ![](./image.svg) applications.
-</div>
+<div align="left"> <img src="https://widgetbite.com/stats/{random-guid}" alt="watching_count" /> </div> <div align="right"> Host Site for ![](./image.svg) applications. </div>
