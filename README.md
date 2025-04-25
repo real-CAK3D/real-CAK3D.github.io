@@ -227,7 +227,7 @@ Mechanic 🔧
 </div>
 
 <div align="center">
-  <a href="https://buymeacoffee.com/CAK3D" target="_blank">
+  <a href="buymeacoffee.com/CAK3D" target="_blank">
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="CAK3D"  />
   </a>
 </div>
