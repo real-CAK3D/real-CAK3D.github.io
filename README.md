@@ -13,24 +13,24 @@
 
 <p align="left">- I like to code—mostly whipping up custom Discord bots and <br>tweaking DayZ servers for fun. <br>- On my free time I lightweight-overnight-hike the Appalachian <br>Trail.<br>- I FIX CAR FOR MONIES ! !
   
-I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you name it—and I live for music, always spinning tracks on Spotify, creating my own works or attending concerts or festivals. My creative spark extends to projection mapping, music production, and even CAD and projection mapping designs, all fueled by a relentless curiosity and a DIY ethos.</p>
+I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you name it—and I live for music, always spinning tracks on Spotify, creating my own works or attending concerts or festivals. My creative spark extends to projection mapping, music production, and even CAD and other Digital Designs, all fueled by a relentless curiosity and a DIY ethos.</p>
 
 <h3 align="left">HOBBIES :</h3>
 
 <p align="left">Life’s too short to stick to one lane. Here’s what fuels my fire:
 
-Gaming: I’m deep into DayZ (building servers and surviving), GTA V, Session Skate Sim, and Ghost of Tsushima. Expect me to nerd out over open-world chaos or samurai vibes.
+Gaming: I’m deep into DayZ (building servers, boys and surviving), GTA V, Session Skate Sim, and Ghost of Tsushima. Expect me to nerd out over open-world chaos or samurai vibes.
 <img src="https://img.shields.io/badge/PSN-%230070D1.svg?style=plastic&logo=Playstation&logoColor=white"  />
 <img src="https://img.shields.io/badge/steam-%23000000.svg?style=plastic&logo=steam&logoColor=white"  />
 
-Music: Always got Spotify blasting, from lo-fi to trap to in your fave DnB. I create my own tracks using my Boss RC-505 Loopstation and MacBook, layering beats like I layer code. I’ve promoted and curated music festivals, handpicking artists and crafting immersive vibes that blend sound, visuals, and community. From underground raves to open-air gatherings, I’ve attended countless festivals, soaking in the energy and channeling it into my own creations.
+Music: Always got Spotify blasting, from lo-fi to trap to in your face DnB. I create my own tracks using my Boss RC-505 Loopstation and MacBook, layering beats like I layer code. I’ve promoted and curated music festivals, handpicking artists and crafting immersive vibes that blend sound, visuals, and community. From underground raves to open-air gatherings, I’ve attended countless festivals, soaking in the energy and channeling it into my own creations.
 
-Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, snowboarding down fresh powder, skateboarding city streets, and skiing when the mood strikes.
+Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, skiing and snowboarding down fresh powder, skateboarding city streets when the mood strikes.
 
 Creative Arts: Basic projection mapping for trippy visuals, graffiti-inspired designs, and CAD for precision projects. GIMP is my go-to for quick edits.
 
-Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.svg?style=plastic&logo=amd&logoColor=white"  /> NUCbox is a awesome for DayZ edits. It will be even more of a beast when I add on an 
-<img src="https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=plastic&logo=nVIDIA&logoColor=white"  /> graphics card. I’m also itching to dive into Raspberry Pi and Blender for new creations,  so this little machine will allow me to do allot.
+Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.svg?style=plastic&logo=amd&logoColor=white"  /> NUCbox is awesome for DayZ edits. It will be even more of a beast when I add on an 
+<img src="https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=plastic&logo=nVIDIA&logoColor=white"  /> graphics card. Where it stands, its got some serious power for such a small machine and the visuals are flawless for what I do. I’m also itching to dive into Raspberry Pi and the FlipperZero and Blender for new creations,  so this little machine will allow me to do allot.
 </p>
 
 <div align="left">
@@ -84,7 +84,7 @@ Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.sv
 
 <h2 align="left">PROJECTS :</h2>
 
-<p align="left">Most everything I've coded has been with these platforms. They've been quite straight forward and ive enjoyed using them, bringing communities to life with interactive features. My DayZ server tweaks are all about immersive, glitch-free experiences.</p>
+<p align="left">Most everything I've coded has been with these platforms. They've been quite straight forward and ive enjoyed using them, bringing communities to life with interactive features, for all of my projects. My DayZ server tweaks are all about immersive, glitch-free experiences. I enjoy a very immersive realistic feel when it comes to gaming, so thats what I aim to provide with my edits. You can always expect some ammount of struggle with a nice relaxing accomplished feel. </p>
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
@@ -102,7 +102,7 @@ Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.sv
 
 ###
 
-<h3 align="left">the ᙃᥲყⱿ ᙅᗣҜӠᙃ Nitrado Servers</h3>
+<h3 align="left">the ᙃᥲყⱿZ ᙅᗣҜӠᙃ Nitrado Servers</h3>
 
 <p align="left">- The Nitrado Servers created by ᙅᗣҜӠᙃ.</p>
 
@@ -130,7 +130,7 @@ Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.sv
 
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=madushadhanushka&repo=simple-sqlite)](https://github.com/madushadhanushka/simple-sqlite)
 
-<p align="left">- A Discord Server Bot for the ꧁ᙃᥲყⱿ ᙅᗣҜӠᙃ꧂ Discord and<br>DayZ Servers.<br>- At the moment I have Livonia and Sakhal up and running, with<br>Chernarus on the way soon!<br>- The bot is still a work in progress and will most likley be finished end of 2025.</p>
+<p align="left">- A Discord Server Bot for the ꧁ᙃᥲყ Z ᙅᗣҜӠᙃ꧂ Discord and<br>DayZ Servers.<br>- At the moment I have Livonia and Sakhal up and running, with<br>Chernarus on the way soon!<br>- The bot is still a work in progress and will most likley be finished end of 2025.</p>
 
 <iframe src="https://discord.com/widget?id=1113078006278275184&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
