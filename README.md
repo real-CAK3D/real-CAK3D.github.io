@@ -23,14 +23,14 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 <img src="https://img.shields.io/badge/PSN-%230070D1.svg?style=plastic&logo=Playstation&logoColor=white"  />
 <img src="https://img.shields.io/badge/steam-%23000000.svg?style=plastic&logo=steam&logoColor=white"  />
 
-<br>Music: Always got Spotify blasting, from lo-fi to trap to in your face DnB. I create my own tracks using my Boss RC-505 Loopstation and MacBook, layering beats like I layer code. I’ve promoted and curated music festivals, handpicking artists and crafting immersive vibes that blend sound, visuals, and community. From underground raves to open-air gatherings, I’ve attended countless festivals, soaking in the energy and channeling it into my own creations.
+<br>Music: Always got Spotify or Soundcloud blasting, from lo-fi to trap to in your face DnB. I create my own tracks using my Boss RC-505 Loopstation and MacBook, layering beats like I layer code. I’ve promoted and curated several music festivals, handpicking artists and crafting immersive vibes that blend sound, visuals, and community. From underground raves to open-air gatherings, I’ve attended countless festivals, soaking in the energy and channeling it into my own creations.
 
-<br>Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, skiing and snowboarding down fresh powder, skateboarding city streets when the mood strikes.
+<br>Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, skiing and snowboarding down fresh powder, skateboarding city streets when the mood strikes, weekend cookouts ( food is life ).
 
-<br>Creative Arts: Basic projection mapping for trippy visuals, graffiti-inspired designs, and CAD for precision projects. GIMP is my go-to for quick edits.
+<br>Creative Arts: Basic projection mapping for trippy visuals and immersive gatherings, graffiti-inspired designs, and CAD for precision projects and 3D renders. GIMP is my go-to for quick edits and creating images to upload to Day Z Servers.
 
 <br>Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.svg?style=plastic&logo=amd&logoColor=white"  /> NUCbox is awesome for DayZ edits. It will be even more of a beast when I add on an 
-<img src="https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=plastic&logo=nVIDIA&logoColor=white"  /> graphics card. Where it stands, its got some serious power for such a small machine and the visuals are flawless for what I do. I’m also itching to dive into Raspberry Pi and the FlipperZero and Blender for new creations,  so this little machine will allow me to do allot.
+<img src="https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=plastic&logo=nVIDIA&logoColor=white"  /> graphics card. Where it stands, its got some serious power for such a small machine and the visuals are flawless for what I do. I’m also itching to dive into Raspberry Pi and the FlipperZero and Blender for new creations, so this little machine will allow me to do allot.
 </p>
 
 <div align="left">
@@ -74,7 +74,6 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
   </a>
 </div>
 
-###
 
 <div align="right">
   <a href="https://open.spotify.com/user/rastaman_420">
@@ -84,7 +83,7 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 
 <h2 align="left">PROJECTS :</h2>
 
-<p align="left">Most everything I've coded has been with these platforms. They've been quite straight forward and ive enjoyed using them, bringing communities to life with interactive features, for all of my projects. My DayZ server tweaks are all about immersive, glitch-free experiences. I enjoy a very immersive realistic feel when it comes to gaming, so thats what I aim to provide with my edits. You can always expect some ammount of struggle with a nice relaxing accomplished feel. </p>
+<p align="left">Most everything I've coded has been used with these platforms. They've been quite straight forward and ive enjoyed using them, bringing communities to life with interactive features, for all of my projects. My DayZ server tweaks are all about glitch-free experiences. I enjoy a very immersive realistic feel when it comes to gaming, so thats what I aim to provide with my edits. You can always expect some ammount of struggle with a nice relaxing accomplished feel. </p>
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
@@ -100,7 +99,6 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
   <img src="https://cdn.simpleicons.org/heroku/430098" height="40" alt="heroku logo"  />
 </div>
 
-###
 
 <h3 align="left">the ᙃᥲყⱿZ ᙅᗣҜӠᙃ Nitrado Servers</h3>
 
@@ -128,7 +126,8 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
   </a>
 </div>
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=madushadhanushka&repo=simple-sqlite)](https://github.com/madushadhanushka/simple-sqlite)
+
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=real-CAK3D&repo=CAK3DBot)](https://github.com/real-CAK3D/CAK3DBot)
 
 <p align="left">- A Discord Server Bot for the ꧁ᙃᥲყ Z ᙅᗣҜӠᙃ꧂ Discord and<br>DayZ Servers.<br>- At the moment I have Livonia and Sakhal up and running, with<br>Chernarus on the way soon!<br>- The bot is still a work in progress and will most likley be finished end of 2025.</p>
 
@@ -152,7 +151,7 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
   </a>
 </div>
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=madushadhanushka&repo=differ)](https://github.com/madushadhanushka/differ)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=real-CAK3D&repo=CAK3DBot)](https://github.com/real-CAK3D/CAK3DBot)
 
 <p align="left">-  The all-seeing, all-doing powerhouse that keeps<br>the God's of Z's server running day in and day out.<br>- Backup bot for CAK3DBot.</p>
 
