@@ -19,7 +19,7 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 
 <p align="left">Life’s too short to stick to one lane. Here’s what fuels my fire:
 
-<br>Gaming: I’m deep into DayZ (building servers, boys and surviving), GTA V, Session Skate Sim, and Ghost of Tsushima. Expect me to nerd out over open-world chaos or samurai vibes.
+<br>Gaming: I’m deep into DayZ (building servers, modding files and surviving), GTA V, Session Skate Sim, and Ghost of Tsushima. Expect me to nerd out over open-world chaos or samurai vibes.
 <img src="https://img.shields.io/badge/PSN-%230070D1.svg?style=plastic&logo=Playstation&logoColor=white"  />
 <img src="https://img.shields.io/badge/steam-%23000000.svg?style=plastic&logo=steam&logoColor=white"  />
 
