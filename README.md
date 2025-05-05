@@ -19,17 +19,17 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 
 <p align="left">Life’s too short to stick to one lane. Here’s what fuels my fire:
 
-Gaming: I’m deep into DayZ (building servers, boys and surviving), GTA V, Session Skate Sim, and Ghost of Tsushima. Expect me to nerd out over open-world chaos or samurai vibes.
+<br>Gaming: I’m deep into DayZ (building servers, boys and surviving), GTA V, Session Skate Sim, and Ghost of Tsushima. Expect me to nerd out over open-world chaos or samurai vibes.
 <img src="https://img.shields.io/badge/PSN-%230070D1.svg?style=plastic&logo=Playstation&logoColor=white"  />
 <img src="https://img.shields.io/badge/steam-%23000000.svg?style=plastic&logo=steam&logoColor=white"  />
 
-Music: Always got Spotify blasting, from lo-fi to trap to in your face DnB. I create my own tracks using my Boss RC-505 Loopstation and MacBook, layering beats like I layer code. I’ve promoted and curated music festivals, handpicking artists and crafting immersive vibes that blend sound, visuals, and community. From underground raves to open-air gatherings, I’ve attended countless festivals, soaking in the energy and channeling it into my own creations.
+<br>Music: Always got Spotify blasting, from lo-fi to trap to in your face DnB. I create my own tracks using my Boss RC-505 Loopstation and MacBook, layering beats like I layer code. I’ve promoted and curated music festivals, handpicking artists and crafting immersive vibes that blend sound, visuals, and community. From underground raves to open-air gatherings, I’ve attended countless festivals, soaking in the energy and channeling it into my own creations.
 
-Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, skiing and snowboarding down fresh powder, skateboarding city streets when the mood strikes.
+<br>Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, skiing and snowboarding down fresh powder, skateboarding city streets when the mood strikes.
 
-Creative Arts: Basic projection mapping for trippy visuals, graffiti-inspired designs, and CAD for precision projects. GIMP is my go-to for quick edits.
+<br>Creative Arts: Basic projection mapping for trippy visuals, graffiti-inspired designs, and CAD for precision projects. GIMP is my go-to for quick edits.
 
-Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.svg?style=plastic&logo=amd&logoColor=white"  /> NUCbox is awesome for DayZ edits. It will be even more of a beast when I add on an 
+<br>Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.svg?style=plastic&logo=amd&logoColor=white"  /> NUCbox is awesome for DayZ edits. It will be even more of a beast when I add on an 
 <img src="https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=plastic&logo=nVIDIA&logoColor=white"  /> graphics card. Where it stands, its got some serious power for such a small machine and the visuals are flawless for what I do. I’m also itching to dive into Raspberry Pi and the FlipperZero and Blender for new creations,  so this little machine will allow me to do allot.
 </p>
 
@@ -192,25 +192,25 @@ Tech Toys: My GMK Tec M7 <img src="https://img.shields.io/badge/AMD-%23000000.sv
 <p align="left">Cannabis Cultivation 🌱
 
 20+ years. Mastered the art of growing, from soil to harvest.
-CO2 Extraction 🧪
+<br>CO2 Extraction 🧪
 
 8+ years. Specialized in extracting high-quality cannabis concentrates.
-Music Production 🎵
+<br>Music Production 🎵
 
 15+ years. Producing tracks with a focus on layering and live looping.
-Event Promotion 🎉
+<br>Event Promotion 🎉
 
 10+ years. Creating precise designs for mechanical and creative projects.
-Programming 💻
+<br>Programming 💻
 
 3 years. JavaScript, Node.js, NPM, Discord.js. Comfortable with Visual Studio Code, Git, GitHub, GitHub Actions, MongoDB, Heroku.
-CAD 📐
+<br>CAD 📐
 
 3 years. Creating precise designs for mechanical and creative projects.
-Development 🎮
+<br>Development 🎮
 
 5 years. Dabbled in Unity, Unreal Engine, and DayZ editor and server builds.
-Mechanic 🔧
+<br>Mechanic 🔧
 
 8 years. Fixing cars for a living, from diagnostics to full rebuilds. I drive a Subaru WRX, so I live for performance. 🚗💨</p>
 
