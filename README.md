@@ -50,23 +50,19 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 <div align="left">
   <a href="http://www.instagram.com/real_cak3d" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="52" height="40" alt="instagram logo"  />
-</div>
 
 <div align="left">
   <a href="http://x.com/_CAK3D_" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg" width="52" height="40" alt="twitter logo"  />
   </a>
-</div> 
 
 <div align="left">
   <a href="https://youtube.com/@real_cak3d?si=efRSapl-GOIus_0" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/youtube/default.svg" width="52" height="40" alt="youtube logo"  />
-</div>
 
 <div align="left">
   <a href="https://www.twitch.tv/real_cak3d" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitch/default.svg" width="52" height="40" alt="twitch logo"  />
-</div>
 
 <div align="left">
   <a href="https://discord.gg/mahQZmTZxJ" target="_blank">
@@ -273,7 +269,7 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 
 <div align="center">
 
-![Snake animation](https://github.com/madushadhanushka/github-readme/blob/output/github-contribution-snake.svg)
+![Snake animation](https://github.com/real-CAK3D/github-readme/blob/output/github-contribution-snake.svg)
 
   ![Snake animation](https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/github-contribution-grid-snake-dark.svg)
   
