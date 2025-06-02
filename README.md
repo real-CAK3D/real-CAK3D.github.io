@@ -269,9 +269,9 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 
 <div align="center">
 
-![Snake animation](https://github.com/real-CAK3D/github-readme/blob/output/github-contribution-snake.svg)
+![Snake animation](https://github.com/real-CAK3D.github.io/github-readme/blob/output/github-contribution-snake.svg)
 
-  ![Snake animation](https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/github-contribution-grid-snake-dark.svg)
+  ![Snake animation](https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-snake-dark.svg)
   
 </div>
 
