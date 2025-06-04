@@ -1,0 +1,37 @@
+name: Update Dog Location
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"  # Every 10 minutes
+  workflow_dispatch:        # Allows manual trigger
+
+jobs:
+  update-location:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Fetch latest comment
+      id: get_comment
+      run: |
+        curl -s \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/issues/1/comments \
+          | jq -r 'sort_by(.created_at) | last.body' \
+          > location.json
+
+    - name: Format and save JSON
+      run: |
+        jq . location.json > location.json.clean
+        mv location.json.clean location.json
+
+    - name: Commit and push
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add location.json
+        git commit -m "Update dog location [auto]" || echo "No changes"
+        git push
