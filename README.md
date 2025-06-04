@@ -9,6 +9,25 @@
   <img src="https://streak-stats.demolab.com?user=real-CAK3D&locale=en&mode=daily&theme=gruvbox&hide_border=false&border_radius=5" height="150" alt="streak graph"  />
 </div>
 
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="
+      https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-breek-dark.svg
+    "
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="
+      https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-breek.svg
+    "
+  />
+  <img
+    alt="github contribution grid breek animation"
+    src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-breek.svg"
+  />
+</picture>
+
 <h3 align="left">About me :</h3>
 
 <p align="left">- I like to code—mostly whipping up custom Discord bots and <br>tweaking DayZ servers for fun. <br>- On my free time I lightweight-overnight-hike the Appalachian <br>Trail.<br>- I FIX CAR FOR MONIES ! !
