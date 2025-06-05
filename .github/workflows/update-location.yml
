@@ -1,37 +1,85 @@
-name: Update Dog Location
+name: Update Location Files
 
 on:
-  schedule:
-    - cron: "*/10 * * * *"  # Every 10 minutes
-  workflow_dispatch:        # Allows manual trigger
+  issue_comment:
+    types: [created]
 
 jobs:
-  update-location:
+  process-location:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-    - name: Fetch latest comment
-      id: get_comment
-      run: |
-        curl -s \
-          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/${{ github.repository }}/issues/1/comments \
-          | jq -r 'sort_by(.created_at) | last.body' \
-          > location.json
+      - name: Fetch Last 10 Comments from Issue
+        id: comments
+        run: |
+          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/real-CAK3D/real-CAK3D.github.io/issues/1/comments \
+            > comments.json
 
-    - name: Format and save JSON
-      run: |
-        jq . location.json > location.json.clean
-        mv location.json.clean location.json
+          jq 'map(.body | fromjson)' comments.json > parsed_comments.json
 
-    - name: Commit and push
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add location.json
-        git commit -m "Update dog location [auto]" || echo "No changes"
-        git push
+      - name: Extract and Save Location Info
+        run: |
+          comments=$(jq -c '.' parsed_comments.json)
+          count=$(jq length parsed_comments.json)
+
+          echo "Total Comments: $count"
+
+          if (( count < 1 )); then
+            echo "No comments found."
+            exit 0
+          fi
+
+          # Get the most recent and previous comment
+          latest=$(jq -c '.[-1]' parsed_comments.json)
+          prev=$(jq -c '.[-2] // empty' parsed_comments.json)
+
+          echo "$latest" > location.json
+          echo "$prev" > location-prev.json
+
+          # Move older comments (older than last 2) to history
+          if (( count > 2 )); then
+            jq '.[0:-2]' parsed_comments.json | jq -c '.[]' > history_entries.json
+            jq -s -c '.' history_entries.json | tr -d '[]' | sed 's/},{/},\n{/g' > location-history.json
+          else
+            echo "" > location-history.json
+          fi
+
+      - name: Generate Google Maps Viewer
+        run: |
+          lat=$(jq -r '.lat' location.json)
+          lon=$(jq -r '.lon' location.json)
+          prev_lat=$(jq -r '.lat' location-prev.json)
+          prev_lon=$(jq -r '.lon' location-prev.json)
+
+          cat <<EOF > map.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dog Tracker</title>
+    <style>
+      iframe { width: 100%; height: 450px; border: 0; }
+      body { font-family: sans-serif; padding: 1rem; background: #f8f8f8; }
+    </style>
+  </head>
+  <body>
+    <h1>Most Recent Location</h1>
+    <iframe src="https://www.google.com/maps?q=${lat},${lon}&output=embed"></iframe>
+
+    <h2>Previous Location</h2>
+    <p>Lat: ${prev_lat}, Lon: ${prev_lon}</p>
+  </body>
+</html>
+EOF
+
+      - name: Commit and Push Updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add location.json location-history.json map.html location-prev.json
+          git commit -m "Update location files from issue comment"
+          git push
