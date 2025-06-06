@@ -5,50 +5,47 @@ on:
     types: [created]
 
 jobs:
-  process-location:
+  update-location:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Fetch Last 10 Comments from Issue
-        id: comments
+      - name: Get last 10 comments on issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          curl -s -H "Authorization: Bearer $GH_TOKEN" \
             https://api.github.com/repos/real-CAK3D/real-CAK3D.github.io/issues/1/comments \
-            > comments.json
+            | jq '[.[] | .body | fromjson]' > parsed_comments.json
 
-          jq 'map(.body | fromjson)' comments.json > parsed_comments.json
-
-      - name: Extract and Save Location Info
+      - name: Process comments and update files
         run: |
-          comments=$(jq -c '.' parsed_comments.json)
           count=$(jq length parsed_comments.json)
+          echo "Total parsed comments: $count"
 
-          echo "Total Comments: $count"
-
-          if (( count < 1 )); then
-            echo "No comments found."
-            exit 0
+          # Handle at least 1 comment
+          if [ "$count" -ge 1 ]; then
+            jq '.[-1]' parsed_comments.json > location.json
           fi
 
-          # Get the most recent and previous comment
-          latest=$(jq -c '.[-1]' parsed_comments.json)
-          prev=$(jq -c '.[-2] // empty' parsed_comments.json)
+          # If there's a second-to-last, save it too
+          if [ "$count" -ge 2 ]; then
+            jq '.[-2]' parsed_comments.json > location-prev.json
+          else
+            echo '{}' > location-prev.json
+          fi
 
-          echo "$latest" > location.json
-          echo "$prev" > location-prev.json
-
-          # Move older comments (older than last 2) to history
-          if (( count > 2 )); then
-            jq '.[0:-2]' parsed_comments.json | jq -c '.[]' > history_entries.json
-            jq -s -c '.' history_entries.json | tr -d '[]' | sed 's/},{/},\n{/g' > location-history.json
+          # Move everything older than last 2 to location-history
+          if [ "$count" -gt 2 ]; then
+            jq '.[0:-2]' parsed_comments.json | jq -s -c 'flatten | .[]' \
+            | jq -s -c 'join(",")' | sed 's/^"//;s/"$//' > location-history.json
           else
             echo "" > location-history.json
           fi
 
-      - name: Generate Google Maps Viewer
+      - name: Generate map.html
         run: |
           lat=$(jq -r '.lat' location.json)
           lon=$(jq -r '.lon' location.json)
@@ -59,10 +56,10 @@ jobs:
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dog Tracker</title>
+    <title>Dog Location</title>
     <style>
-      iframe { width: 100%; height: 450px; border: 0; }
-      body { font-family: sans-serif; padding: 1rem; background: #f8f8f8; }
+      iframe { width: 100%; height: 400px; border: none; }
+      body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 1rem; }
     </style>
   </head>
   <body>
@@ -70,16 +67,15 @@ jobs:
     <iframe src="https://www.google.com/maps?q=${lat},${lon}&output=embed"></iframe>
 
     <h2>Previous Location</h2>
-    <p>Lat: ${prev_lat}, Lon: ${prev_lon}</p>
+    <p>Latitude: ${prev_lat}, Longitude: ${prev_lon}</p>
   </body>
 </html>
 EOF
 
-      - name: Commit and Push Updates
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add location.json location-history.json map.html location-prev.json
-          git commit -m "Update location files from issue comment"
+          git add location.json location-prev.json location-history.json map.html
+          git commit -m "Update location files from issue comment" || echo "No changes to commit"
           git push
