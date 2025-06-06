@@ -1,0 +1,42 @@
+name: Update README with Latest Location
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    if: github.event.issue.number == 1  # Replace '1' with your specific issue number
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Get comment body
+        run: |
+          echo "${{ github.event.comment.body }}" > comment.txt
+
+      - name: Parse Coordinates
+        id: coords
+        run: |
+          LAT=$(grep -oP 'Lat:\s*\K[-+]?[0-9]*\.?[0-9]+' comment.txt)
+          LON=$(grep -oP 'Lon:\s*\K[-+]?[0-9]*\.?[0-9]+' comment.txt)
+          echo "LAT=$LAT" >> $GITHUB_ENV
+          echo "LON=$LON" >> $GITHUB_ENV
+
+      - name: Update README
+        run: |
+          sed -i -E "s|<iframe.*<\/iframe>|<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2865.2493525638047!2d$LON!3d$LAT!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2us!4v1747449999425!5m2!1sen!2us\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>|g" README.md
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update location in README" || echo "No changes to commit"
+          git push
