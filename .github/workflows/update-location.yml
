@@ -1,85 +1,40 @@
-name: Update Location Files
+name: Update Location in README
 
 on:
   issue_comment:
     types: [created]
 
 jobs:
-  process-location:
+  update-readme-location:
+    if: contains(github.event.comment.body, 'lat') && contains(github.event.comment.body, 'lon')
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repo
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Fetch Last 10 Comments from Issue
-        id: comments
+      - name: Extract latitude and longitude from comment
+        id: get_location
         run: |
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/repos/real-CAK3D/real-CAK3D.github.io/issues/1/comments \
-            > comments.json
+          echo '${{ github.event.comment.body }}' > comment.json
+          lat=$(jq '.lat' comment.json)
+          lon=$(jq '.lon' comment.json)
+          echo "lat=$lat" >> $GITHUB_OUTPUT
+          echo "lon=$lon" >> $GITHUB_OUTPUT
 
-          jq 'map(.body | fromjson)' comments.json > parsed_comments.json
-
-      - name: Extract and Save Location Info
+      - name: Update iframe in README
         run: |
-          comments=$(jq -c '.' parsed_comments.json)
-          count=$(jq length parsed_comments.json)
+          lat=${{ steps.get_location.outputs.lat }}
+          lon=${{ steps.get_location.outputs.lon }}
+          echo "Updating README.md with lat: $lat and lon: $lon"
 
-          echo "Total Comments: $count"
+          # Replace !2dLONG!3dLAT in the iframe URL
+          sed -i -E "s/!2d-?[0-9]+\.[0-9]+!3d-?[0-9]+\.[0-9]+/!2d${lon}!3d${lat}/" README.md
 
-          if (( count < 1 )); then
-            echo "No comments found."
-            exit 0
-          fi
-
-          # Get the most recent and previous comment
-          latest=$(jq -c '.[-1]' parsed_comments.json)
-          prev=$(jq -c '.[-2] // empty' parsed_comments.json)
-
-          echo "$latest" > location.json
-          echo "$prev" > location-prev.json
-
-          # Move older comments (older than last 2) to history
-          if (( count > 2 )); then
-            jq '.[0:-2]' parsed_comments.json | jq -c '.[]' > history_entries.json
-            jq -s -c '.' history_entries.json | tr -d '[]' | sed 's/},{/},\n{/g' > location-history.json
-          else
-            echo "" > location-history.json
-          fi
-
-      - name: Generate Google Maps Viewer
+      - name: Commit changes
         run: |
-          lat=$(jq -r '.lat' location.json)
-          lon=$(jq -r '.lon' location.json)
-          prev_lat=$(jq -r '.lat' location-prev.json)
-          prev_lon=$(jq -r '.lon' location-prev.json)
-
-          cat <<EOF > map.html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Dog Tracker</title>
-    <style>
-      iframe { width: 100%; height: 450px; border: 0; }
-      body { font-family: sans-serif; padding: 1rem; background: #f8f8f8; }
-    </style>
-  </head>
-  <body>
-    <h1>Most Recent Location</h1>
-    <iframe src="https://www.google.com/maps?q=${lat},${lon}&output=embed"></iframe>
-
-    <h2>Previous Location</h2>
-    <p>Lat: ${prev_lat}, Lon: ${prev_lon}</p>
-  </body>
-</html>
-EOF
-
-      - name: Commit and Push Updates
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add location.json location-history.json map.html location-prev.json
-          git commit -m "Update location files from issue comment"
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@users.noreply.github.com'
+          git add README.md
+          git commit -m "📍 Update map location to lat: ${{ steps.get_location.outputs.lat }}, lon: ${{ steps.get_location.outputs.lon }}" || echo "No changes to commit"
           git push
