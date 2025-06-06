@@ -1,36 +1,38 @@
-name: Update Map Location
+name: Update Location in README
 
 on:
   issue_comment:
     types: [created]
 
 jobs:
-  update-map:
-    if: contains(github.event.comment.body, 'lat') && contains(github.event.comment.body, 'lon')
+  update-readme:
     runs-on: ubuntu-latest
-
+    if: ${{ github.event.issue.pull_request == null }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Parse coordinates from comment
-        id: get_location
+      - name: Extract lat/lon from comment
+        id: extract
         run: |
           echo '${{ github.event.comment.body }}' > comment.json
           LAT=$(jq -r '.lat' comment.json)
           LON=$(jq -r '.lon' comment.json)
+          if [[ "$LAT" == "null" || "$LON" == "null" ]]; then
+            echo "Latitude or Longitude not found in the comment."
+            exit 1
+          fi
           echo "LAT=$LAT" >> $GITHUB_ENV
           echo "LON=$LON" >> $GITHUB_ENV
 
-      - name: Replace coordinates in README
+      - name: Update coordinates in README
         run: |
-          echo "Replacing map coordinates in README.md..."
           sed -i -E "s/!2d[-0-9.]+!3d[-0-9.]+/!2d$LON!3d$LAT/" README.md
 
       - name: Commit and push changes
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add README.md
-          git commit -m "📍 Update coordinates to lat: $LAT, lon: $LON" || echo "No changes to commit"
+          git diff --cached --quiet || git commit -m "Update location to lat: $LAT, lon: $LON"
           git push
