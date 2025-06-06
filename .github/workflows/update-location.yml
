@@ -1,40 +1,36 @@
-name: Update Location in README
+name: Update Map Location
 
 on:
   issue_comment:
     types: [created]
 
 jobs:
-  update-readme-location:
+  update-map:
     if: contains(github.event.comment.body, 'lat') && contains(github.event.comment.body, 'lon')
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Extract latitude and longitude from comment
+      - name: Parse coordinates from comment
         id: get_location
         run: |
           echo '${{ github.event.comment.body }}' > comment.json
-          lat=$(jq '.lat' comment.json)
-          lon=$(jq '.lon' comment.json)
-          echo "lat=$lat" >> $GITHUB_OUTPUT
-          echo "lon=$lon" >> $GITHUB_OUTPUT
+          LAT=$(jq -r '.lat' comment.json)
+          LON=$(jq -r '.lon' comment.json)
+          echo "LAT=$LAT" >> $GITHUB_ENV
+          echo "LON=$LON" >> $GITHUB_ENV
 
-      - name: Update iframe in README
+      - name: Replace coordinates in README
         run: |
-          lat=${{ steps.get_location.outputs.lat }}
-          lon=${{ steps.get_location.outputs.lon }}
-          echo "Updating README.md with lat: $lat and lon: $lon"
+          echo "Replacing map coordinates in README.md..."
+          sed -i -E "s/!2d[-0-9.]+!3d[-0-9.]+/!2d$LON!3d$LAT/" README.md
 
-          # Replace !2dLONG!3dLAT in the iframe URL
-          sed -i -E "s/!2d-?[0-9]+\.[0-9]+!3d-?[0-9]+\.[0-9]+/!2d${lon}!3d${lat}/" README.md
-
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@users.noreply.github.com'
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
           git add README.md
-          git commit -m "📍 Update map location to lat: ${{ steps.get_location.outputs.lat }}, lon: ${{ steps.get_location.outputs.lon }}" || echo "No changes to commit"
+          git commit -m "📍 Update coordinates to lat: $LAT, lon: $LON" || echo "No changes to commit"
           git push
