@@ -1,4 +1,4 @@
-name: Update Location in README
+name: Update Location in README with Pin
 
 on:
   issue_comment:
@@ -18,25 +18,21 @@ jobs:
           echo '${{ github.event.comment.body }}' > comment.json
           LAT=$(jq -r '.lat' comment.json)
           LON=$(jq -r '.lon' comment.json)
-
           if [[ "$LAT" == "null" || "$LON" == "null" ]]; then
-            echo "❌ Latitude or Longitude not found in comment"
+            echo "Latitude or Longitude not found in the comment."
             exit 1
           fi
-
           echo "LAT=$LAT" >> $GITHUB_ENV
           echo "LON=$LON" >> $GITHUB_ENV
 
-      - name: Replace FIRST iframe in README with updated map
+      - name: Update iframe in README
         run: |
-          NEW_IFRAME="<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2865.2493525638047!2d$LON!3d$LAT!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2us!4v$(date +%s)000!5m2!1sen!2us\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
-
-          sed -i -E "0,/<iframe[^<]*<\/iframe>/s||$NEW_IFRAME|" README.md
+          perl -0777 -i -pe 's|<iframe[^>]*src="https://maps.google.com/maps\?q=[^"]*"[^>]*>.*?</iframe>|<iframe width="400" height="300" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=$ENV{LAT},$ENV{LON}&z=15&output=embed"></iframe>|s' README.md
 
       - name: Commit and push changes
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add README.md
-          git diff --cached --quiet || git commit -m "📍 Update map to $LAT, $LON"
+          git diff --cached --quiet || git commit -m "Update location to lat: $LAT, lon: $LON"
           git push
