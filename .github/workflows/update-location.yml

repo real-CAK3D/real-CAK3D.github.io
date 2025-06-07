@@ -1,4 +1,4 @@
-name: Update Location in README with Pin
+name: Update Location in README
 
 on:
   issue_comment:
@@ -25,9 +25,9 @@ jobs:
           echo "LAT=$LAT" >> $GITHUB_ENV
           echo "LON=$LON" >> $GITHUB_ENV
 
-      - name: Update iframe in README
+      - name: Update coordinates in README
         run: |
-          perl -0777 -i -pe 's|<iframe[^>]*src="https://maps.google.com/maps\?q=[^"]*"[^>]*>.*?</iframe>|<iframe width="400" height="300" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=$ENV{LAT},$ENV{LON}&z=15&output=embed"></iframe>|s' README.md
+          perl -0777 -i -pe 's/(!2d)([-0-9.]+)(!3d)([-0-9.]+)/"${1}$ENV{LON}${3}$ENV{LAT}"/ge' README.md
 
       - name: Commit and push changes
         run: |
