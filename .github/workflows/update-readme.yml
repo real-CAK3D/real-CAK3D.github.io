@@ -15,7 +15,7 @@ jobs:
       - name: Extract lat/lon from comment
         id: extract
         run: |
-          echo "${{ github.event.comment.body }}" > comment.json
+          echo '${{ github.event.comment.body }}' > comment.json
           LAT=$(jq -r '.lat' comment.json)
           LON=$(jq -r '.lon' comment.json)
           if [[ "$LAT" == "null" || "$LON" == "null" ]]; then
