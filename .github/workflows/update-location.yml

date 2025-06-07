@@ -15,13 +15,18 @@ jobs:
       - name: Extract lat/lon from comment
         id: extract
         run: |
-          echo '${{ github.event.comment.body }}' > comment.json
+          cat <<EOF > comment.json
+          ${{ github.event.comment.body }}
+          EOF
+
           LAT=$(jq -r '.lat' comment.json)
           LON=$(jq -r '.lon' comment.json)
+
           if [[ "$LAT" == "null" || "$LON" == "null" ]]; then
             echo "Latitude or Longitude not found in the comment."
             exit 1
           fi
+
           echo "LAT=$LAT" >> $GITHUB_ENV
           echo "LON=$LON" >> $GITHUB_ENV
 
