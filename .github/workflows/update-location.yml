@@ -25,9 +25,9 @@ jobs:
           echo "LAT=$LAT" >> $GITHUB_ENV
           echo "LON=$LON" >> $GITHUB_ENV
 
-      - name: Update coordinates in README
+      - name: Update iframe in README with pin
         run: |
-          perl -0777 -i -pe 's/(!2d)([-0-9.]+)(!3d)([-0-9.]+)/"${1}$ENV{LON}${3}$ENV{LAT}"/ge' README.md
+          perl -0777 -i -pe 's|<iframe[^>]*src="https://www\.google\.com/maps/embed\?pb=[^"]*"[^>]*>.*?</iframe>|<iframe width="400" height="300" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=$ENV{LAT},$ENV{LON}&z=15&output=embed"></iframe>|s' README.md
 
       - name: Commit and push changes
         run: |
