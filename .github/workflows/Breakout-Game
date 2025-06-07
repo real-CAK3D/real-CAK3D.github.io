@@ -1,6 +1,6 @@
 - name: Generate Breek Animation
   uses: cherninlab/breek@v1.0.0
   with:
-    github_user_name: ${{ github.repository_owner }}
+    github_user_name: real-CAK3D
     svg_out_path: dist/github-contribution-grid-breek.svg
     svg_dark_out_path: dist/github-contribution-grid-breek-dark.svg
