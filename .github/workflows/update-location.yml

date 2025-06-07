@@ -1,6 +1,6 @@
 name: Update Location in README with Pin
 
-
+on:
   issue_comment:
     types: [created]
 
