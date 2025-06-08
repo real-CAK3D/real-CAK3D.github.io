@@ -44,7 +44,7 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 
 <br>Music: Always got Spotify or Soundcloud blasting, from lo-fi to trap to in your face DnB. I create my own tracks using my Boss RC-505 Loopstation and MacBook, layering beats like I layer code. I’ve promoted and curated several music festivals, handpicking artists and crafting immersive vibes that blend sound, visuals, and community. From underground raves to open-air gatherings, I’ve attended countless festivals, soaking in the energy and channeling it into my own creations.
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2865.2493525638047!2d-70.2263175!3d44.1076105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1747449999425!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2865.2493525638047!2d-70.1628048!3d44.0973368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1747449999425!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 <br>Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, skiing and snowboarding down fresh powder, skateboarding city streets when the mood strikes, weekend cookouts ( food is life ).
 
