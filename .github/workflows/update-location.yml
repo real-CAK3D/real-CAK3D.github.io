@@ -27,7 +27,7 @@ jobs:
 
       - name: Update iframe in README with pin
         run: |
-          perl -0777 -i -pe "s|<iframe[^>]*src="https://www\.google\.com/maps/embed\?pb=[^"]*"[^>]*>.*?</iframe>|<iframe width="400" height="300" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=$ENV{LAT},$ENV{LON}&z=15&output=embed"></iframe>|s" README.md
+          perl -0777 -i -pe "s|<iframe[^>]*src=\"https://www\.google\.com/maps/embed\?pb=[^\"]*\"[^>]*>.*?</iframe>|<iframe width=\"400\" height=\"300\" style=\"border:0\" loading=\"lazy\" allowfullscreen referrerpolicy=\"no-referrer-when-downgrade\" src=\"https://www.google.com/maps?q=$ENV{LAT},$ENV{LON}&hl=en&z=15&output=embed\"></iframe>|s" README.md
 
       - name: Commit and push changes
         run: |
