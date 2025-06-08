@@ -27,7 +27,7 @@ jobs:
 
       - name: Update coordinates in README
         run: |
-          perl -0777 -i -pe 's/(!2d)([-0-9.]+)(!3d)([-0-9.]+)/"${1}$ENV{LON}${3}$ENV{LAT}"/ge' README.md
+          perl -0777 -i -pe 's/q=[0-9.-]+,[0-9.-]+/q=$ENV{LAT},$ENV{LON}/g' README.md
 
       - name: Commit and push changes
         run: |
