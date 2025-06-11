@@ -51,7 +51,7 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
   loading="lazy"
   allowfullscreen
   referrerpolicy="no-referrer-when-downgrade"
-  src="https://maps.google.com/maps?q=44.0988816,-70.1658781&z=15&output=embed">
+  src="https://maps.google.com/maps?q=44.0972738,-70.1626541&z=15&output=embed">
 </iframe>
 
 <br>Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, skiing and snowboarding down fresh powder, skateboarding city streets when the mood strikes, weekend cookouts ( food is life ).
