@@ -30,6 +30,12 @@
   />
 </picture>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/pacman-contribution-graph.svg">
+</picture>
+
 <h3 align="left">About me :</h3>
 
 <p align="left">- I like to code—mostly whipping up custom Discord bots and <br>tweaking DayZ servers for fun. <br>- On my free time I lightweight-overnight-hike the Appalachian <br>Trail.<br>- I FIX CAR FOR MONIES ! !
