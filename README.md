@@ -137,6 +137,60 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
     }
 </style>
 
+
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start; width: 100%; margin-bottom: 2rem;">
+
+  <!-- CAK3DBot Section -->
+  <div style="flex: 1; max-width: 45%; padding: 0 1rem;">
+    <h3 align="left">CAK3DBot</h3>
+    <div align="center">
+      <a href="https://discord.gg/6NFd2cx9KU" target="_blank">
+        <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo" />
+      </a>
+    </div>
+    <div align="right">
+      <a href="https://github.com/real-CAK3D/CAK3DBot" target="_blank">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=real-CAK3D&repo=CAK3DBot" width="52" height="40" alt="ReadMe Card" />
+      </a>
+    </div>
+    <p align="left">
+      - A Discord Server Bot for the ꧁ᙃᥲყ Z ᙅᗣҜӠᙃ꧂ Discord and<br>DayZ Servers.<br>- At the moment I have Livonia and Sakhal up and running, with<br>Chernarus on the way soon!<br>- The bot is still a work in progress and will most likely be finished end of 2025.
+    </p>
+    <iframe src="https://discord.com/widget?id=1113078006278275184&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+  </div>
+
+  <!-- ZBot Section -->
+  <div style="flex: 1; max-width: 45%; padding: 0 1rem;">
+    <h3 align="left">ZBot</h3>
+    <div align="center">
+      <a href="http://www.discord.gg/8J5F9KjkS6" target="_blank">
+        <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo" />
+      </a>
+    </div>
+    <div align="right">
+      <a href="https://github.com/real-CAK3D/CAK3DBot" target="_blank">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=real-CAK3D&repo=CAK3DBot" width="52" height="40" alt="ReadMe Card" />
+      </a>
+    </div>
+    <p align="left">
+      - The all-seeing, all-doing powerhouse that keeps<br>the God's of Z's server running day in and day out.<br>- Backup bot for CAK3DBot.
+    </p>
+    <iframe src="https://discord.com/widget?id=1343750278792351838&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+  </div>
+</div>
+
+<!-- Sullivan Connect centered below -->
+<div style="max-width: 80%; margin: 0 auto; text-align: center;">
+  <h3>Sullivan Connect</h3>
+  <p>
+    - Sullivan Connect is your trusty shop companion,<br>designed to streamline the day-to-day operations<br>of your Auto Location.<br>- Full inventory and re-stock system.<br>- Interactive "Team" point system.<br>- Private Bot (no link available)
+  </p>
+</div>
+
+
+
+
 <h3 align="left">CAK3DBot</h3>
 
 <div align="center">
@@ -309,14 +363,8 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
     })
 </script>
 
-  <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="github-snake.svg" />
-  <img alt="github-snake" src="github-snake.svg" />
-</picture>
-
 <!-- Elfsight AI Chatbot | Untitled AI Chatbot -->
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
 <div class="elfsight-app-cf9691e7-f718-4ae7-9ef4-861ef7c11b55" data-elfsight-app-lazy></div>
 
-<div align="left"> <img src="https://widgetbite.com/stats/{random-guid}" alt="watching_count" /> </div> <div align="right"> Host Site for ![](./image.svg) applications. </div>
+<div align="left"> <img src="https://widgetbite.com/stats/{random-guid}" alt="watching_count" /> </div> <div align="right"> Host Site for real- <img src="https://github.com/real-CAK3D/real-CAK3D.github.io/blob/fb9018a227c358dd5dfa1018b8b9673b8977f9db/image.svg" height="30" alt="CAK3D logo"  /> Creations. </div>
