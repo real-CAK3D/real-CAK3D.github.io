@@ -4,6 +4,8 @@
 
 <h1 align="center">꧁ᙅᗣҜӠᙃ꧂</h1>
 
+[![GitHub WidgetBox](https://github-widgetbox.vercel.app/api/profile?username=real-CAK3D&data=followers,repositories,stars,commits&theme=nautilus)](https://github.com/real-CAK3D/real-CAK3D.github.io)
+
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=real-CAK3D&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=gruvbox&locale=en&hide_border=false" height="150" alt="stats graph"  />
   <img src="https://streak-stats.demolab.com?user=real-CAK3D&locale=en&mode=daily&theme=gruvbox&hide_border=false&border_radius=5" height="150" alt="streak graph"  />
@@ -159,6 +161,9 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
     </p>
     <iframe src="https://discord.com/widget?id=1113078006278275184&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
   </div>
+
+  [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=real-CAK3D&repo=CAK3DBot)](https://github.com/real-CAK3D/CAK3DBot)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=madushadhanushka&repo=simple-sqlite)](https://github.com/madushadhanushka/simple-sqlite)
 
   <!-- ZBot Section -->
   <div style="flex: 1; max-width: 45%; padding: 0 1rem;">
