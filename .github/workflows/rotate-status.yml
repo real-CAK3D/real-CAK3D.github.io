@@ -1,0 +1,128 @@
+name: Rotate GitHub Status
+
+on:
+  schedule:
+    # Default rotation every 30 minutes
+    - cron: "*/30 * * * *"
+
+    # Morning rotation (4:24–6:30am local → 09:24–11:30 UTC)
+    - cron: "*/15 9-11 * * *"
+
+    # 4:20 AM (local → 09:20 UTC)
+    - cron: "20 9 * * *"
+
+    # 4:20 PM (local → 21:20 UTC)
+    - cron: "20 21 * * *"
+
+    # Night mode every 30 min after 11:30 PM (local → 04:30–06:00 UTC)
+    - cron: "*/30 4-6 * * *"
+
+jobs:
+  update-status:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Determine current mode (420 / morning / night / default)
+        id: mode
+        run: |
+          HOUR=$(date -u +%H)
+          MIN=$(date -u +%M)
+          SEC=$(date -u +%S)
+
+          # 420 mode triggers EXACTLY 09:20 or 21:20 UTC
+          if [[ "$HOUR" == "09" && "$MIN" == "20" ]] || [[ "$HOUR" == "21" && "$MIN" == "20" ]]; then
+            echo "mode=420" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Morning mode: 09:24–11:30 UTC
+          if (( (HOUR==9 && MIN>=24) || (HOUR==10) || (HOUR==11 && MIN<=30) )); then
+            echo "mode=morning" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Night mode: After 11:30 PM local → 04:30–06:00 UTC
+          if (( (HOUR==4 && MIN>=30) || (HOUR==5) || (HOUR==6 && MIN<=0) )); then
+            echo "mode=night" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Default mode otherwise
+          echo "mode=default" >> $GITHUB_OUTPUT
+
+      - name: Select status
+        id: status
+        run: |
+          MODE="${{ steps.mode.outputs.mode }}"
+
+          if [[ "$MODE" == "420" ]]; then
+            OPTIONS=(
+              "🔥 420 on the Money"
+              "⏰ It's THAT Time"
+              "📖 There's a story about this Time"
+              "✨ Spark it Up"
+              "🌿 420"
+            )
+
+          elif [[ "$MODE" == "morning" ]]; then
+            OPTIONS=(
+              "🌞 Wake N' Bake"
+              "☕ Coffee, Coding and Cannabis"
+              "🌤️ Morning Stoners"
+              "🔋 Coffee loading… 45% Weed loading… 100% Willingness to deal with production incidents… 3%"
+              "💻 Just sparked a fatty, poured a cold brew darker than my VS Code theme, and now I’m about to commit war crimes in JavaScript. Good morning."
+              "❗ Error 404: Motivation not found"
+              "🔍 Error 404: Motivation not found"
+            )
+
+          elif [[ "$MODE" == "night" ]]; then
+            OPTIONS=(
+              "😴 One more Hit before Bed"
+              "💤 Stoned Asleep"
+              "🚫 Error 503: Consciousness temporarily unavailable"
+              "🛌 Status: unconscious, drooling on keyboard, last commit message was 'fuxking works now zzzz'"
+              "🪐 Took a bedtime bong rip so strong I’m currently orbiting Jupiter. Wake me in 2026."
+              "🌙 Sleep schedule: wake and bake → work → bake and sleep → repeat until death or weekend, whichever comes first."
+              "🧟 I’m not dead, I’m just in a 10-hour debugger session and the weed started without telling me"
+              "🌫️ If I don’t reply it’s because I’m a background process now, running on 0.1% CPU and 100% THC."
+            )
+
+          else
+            OPTIONS=(
+              "☕ Coffee: because adulting Weed: because debugging"
+              "🚬 Just hotboxed the home office, now my cursor is moving in slow motion but my brain is writing TypeScript like it’s poetry. Balance restored"
+              "💨 Currently running on 87% THC, 12% caffeine, and 1% hope that this regex actually works."
+              "🧠 brain.dev = null; coffee.loading = false; weed.jar = empty; productivity = 404; send help;"
+              "📊 Current mood: 0% ██████████ 100% | Actual mood: 100% ██████████ 0%"
+              "⚠️ Error 503: Brain temporarily unavailable, try again after next rip"
+              "💥 Error 500: Internal Stoner Error"
+              "🖥️ Coding Servers"
+            )
+          fi
+
+          RAND=$((RANDOM % ${#OPTIONS[@]}))
+          SELECTED="${OPTIONS[$RAND]}"
+
+          echo "selected=$SELECTED" >> $GITHUB_OUTPUT
+
+      - name: Update GitHub Status
+        env:
+          GITHUB_TOKEN: ${{ secrets.STATUS_TOKEN }}
+          RAW: ${{ steps.status.outputs.selected }}
+        run: |
+          EMOJI=$(echo "$RAW" | awk '{print $1}')
+          MESSAGE=$(echo "$RAW" | awk '{$1=""; print $0}')
+
+          gh api graphql -f query='
+            mutation ($emoji: String, $message: String) {
+              changeUserStatus(input: {
+                emoji: $emoji,
+                message: $message
+              }) {
+                status {
+                  emoji
+                  message
+                }
+              }
+            }
+          ' -F emoji="$EMOJI" -F message="$MESSAGE"
