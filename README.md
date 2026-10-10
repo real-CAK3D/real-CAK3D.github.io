@@ -59,16 +59,6 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 
 <br>Music: Always got Spotify or Soundcloud blasting, from lo-fi to trap to in your face DnB. I create my own tracks using my Boss RC-505 Loopstation and MacBook, layering beats like I layer code. I’ve promoted and curated several music festivals, handpicking artists and crafting immersive vibes that blend sound, visuals, and community. From underground raves to open-air gatherings, I’ve attended countless festivals, soaking in the energy and channeling it into my own creations.
 
-<iframe
-  width="400"
-  height="300"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://maps.google.com/maps?q=44.1076105,-70.2263175&z=15&output=embed">
-</iframe>
-
 <br>Outdoor Life: Lightweight overnight hikes on the Appalachian Trail, skiing and snowboarding down fresh powder, skateboarding city streets when the mood strikes, weekend cookouts ( food is life ).
 
 <br>Creative Arts: Basic projection mapping for trippy visuals and immersive gatherings, graffiti-inspired designs, and CAD for precision projects and 3D renders. GIMP is my go-to for quick edits and creating images to upload to Day Z Servers.
