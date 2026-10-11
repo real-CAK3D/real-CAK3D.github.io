@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>꧁ᙅᗣҜӠᙃ꧂</title>
+<meta name="description" content="Host Site for real-CAK3D Creations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ---------- Palette: night forest (dark) / topo-map parchment (light) ---------- */
+:root{
+  --bg:#0a130f; --bg-2:#0f1b15; --card:#12201a; --line:#22372c; --line-2:#2f4a3b;
+  --text:#e9efe4; --muted:#9db0a2; --accent:#e9b949; --moss:#8fbf6a; --rust:#d9783a; --sky:#6fb3c9;
+  --ridge-far:#16281f; --ridge-mid:#122219; --ridge-near:#0c1812; --sun:#f4e3a1;
+  --topo:rgba(143,191,106,.07); --firefly:#c9e27a; --blaze:#f3efe2;
+  --radius:16px; --max:1160px;
+}
+:root[data-theme="light"]{
+  --bg:#f3eddf; --bg-2:#ebe3d0; --card:#fbf7ee; --line:#dccfb3; --line-2:#c9b994;
+  --text:#1e2a21; --muted:#5b6a5d; --accent:#b5651d; --moss:#4a7c3a; --rust:#b5651d; --sky:#3f7f96;
+  --ridge-far:#c9d3b9; --ridge-mid:#9fb38f; --ridge-near:#5d7d55; --sun:#f0b860;
+  --topo:rgba(91,106,60,.10); --firefly:#5d8a3a; --blaze:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* Topographic contour lines across the whole page */
+.topo-tint{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--topo);
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520' fill='none' stroke='%23000' stroke-width='1.2'%3E%3Cpath d='M260 120c70 0 140 40 140 120s-60 150-150 150-140-60-140-140 80-130 150-130z'/%3E%3Cpath d='M262 160c48 0 98 28 98 84s-42 104-108 104-100-42-100-98 60-90 110-90z'/%3E%3Cpath d='M262 200c28 0 58 16 58 46s-26 62-66 62-58-24-58-56 38-52 66-52z'/%3E%3Cpath d='M-20 60c80-30 160 10 240-20s170-60 320-10'/%3E%3Cpath d='M-20 470c90-40 170 20 260-10s180-50 300 0'/%3E%3Cpath d='M-20 500c90-30 180 20 270-6s170-40 290 6'/%3E%3Cpath d='M30 300c-20-60 10-110 50-130'/%3E%3Cpath d='M470 330c30-50 20-120-20-150'/%3E%3C/svg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520' fill='none' stroke='%23000' stroke-width='1.2'%3E%3Cpath d='M260 120c70 0 140 40 140 120s-60 150-150 150-140-60-140-140 80-130 150-130z'/%3E%3Cpath d='M262 160c48 0 98 28 98 84s-42 104-108 104-100-42-100-98 60-90 110-90z'/%3E%3Cpath d='M262 200c28 0 58 16 58 46s-26 62-66 62-58-24-58-56 38-52 66-52z'/%3E%3Cpath d='M-20 60c80-30 160 10 240-20s170-60 320-10'/%3E%3Cpath d='M-20 470c90-40 170 20 260-10s180-50 300 0'/%3E%3Cpath d='M-20 500c90-30 180 20 270-6s170-40 290 6'/%3E%3Cpath d='M30 300c-20-60 10-110 50-130'/%3E%3Cpath d='M470 330c30-50 20-120-20-150'/%3E%3C/svg%3E");
+  -webkit-mask-size:520px 520px;mask-size:520px 520px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.mono{font-family:"JetBrains Mono",monospace}
+.hand{font-family:Caveat,cursive;font-weight:600}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em}
+
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+.brand{font-weight:700;font-size:1.15rem;display:flex;align-items:center;gap:.6rem;white-space:nowrap}
+.brand svg{width:30px;height:30px}
+.links{display:flex;gap:1.4rem;font-size:.9rem;color:var(--muted)}
+.links a{position:relative}
+.links a:hover{color:var(--text)}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--accent);transform:scaleX(0);transition:.2s;transform-origin:left}
+.links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;gap:.6rem;align-items:center}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;display:grid;place-items:center}
+.menu-btn{display:none}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.75rem 1.25rem;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--line-2);transition:.2s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#16120a;border-color:var(--accent)}
+.btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-ghost{background:color-mix(in srgb,var(--card) 70%,transparent)}
+.btn-ghost:hover{border-color:var(--moss);color:var(--moss)}
+
+/* ---------- Hero: layered ridges ---------- */
+.hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-start;overflow:hidden;padding-top:80px}
+.hero-sky{position:absolute;inset:0;background:radial-gradient(1200px 500px at 75% 18%,color-mix(in srgb,var(--sun) 20%,transparent),transparent 60%)}
+.hero-scene{position:absolute;left:0;right:0;bottom:0;width:100%;height:68%;min-height:300px}
+.hero-scene .layer{transition:transform .1s linear;will-change:transform}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;color:var(--accent);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.blaze{display:inline-block;width:7px;height:16px;background:var(--blaze);border-radius:1px;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.hero h1{font-family:Inter,system-ui,sans-serif;font-size:clamp(2.8rem,8vw,5.5rem);line-height:1.5;padding-bottom:.6em;font-weight:800;margin:.4rem 0 0;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:600px}
+.hero .note{display:block;margin-top:.8rem;color:var(--moss);font-size:1.5rem}
+.hero .ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.lanes{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.6rem}
+.lane{display:inline-flex;align-items:center;gap:.45rem;font-size:.8rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line-2);background:color-mix(in srgb,var(--card) 75%,transparent);color:var(--muted)}
+.lane i{color:var(--accent)}
+
+/* ---------- Trail log (stats) ---------- */
+.trail-log{position:relative;z-index:2;margin-top:-70px}
+.log{display:grid;grid-template-columns:repeat(4,1fr);background:color-mix(in srgb,var(--card) 92%,transparent);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;backdrop-filter:blur(6px)}
+.log .stat{padding:1.3rem 1.4rem;border-right:1px dashed var(--line-2);display:flex;gap:1rem;align-items:center}
+.log .stat:last-child{border-right:0}
+.log .stat i{font-size:1.3rem;color:var(--moss);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--moss) 14%,transparent)}
+.log b{display:block;font-family:Fraunces,serif;font-size:1.7rem;line-height:1.1}
+.log span{color:var(--muted);font-size:.82rem}
+
+/* ---------- Sections & trail markers ---------- */
+main,footer{position:relative;z-index:1}
+section{padding:96px 0;position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2.6rem;flex-wrap:wrap}
+.marker{display:inline-flex;align-items:center;gap:.6rem;font-family:"JetBrains Mono",monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+.sec-head h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:700}
+.sec-head p{color:var(--muted);max-width:500px}
+.ridge-divider{display:block;width:100%;height:60px;color:var(--line)}
+.grid{display:grid;gap:1.2rem}
+.g4{grid-template-columns:repeat(4,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+
+.card,.widget{position:relative;background:color-mix(in srgb,var(--card) 90%,transparent);border:1px solid var(--line);border-radius:var(--radius);transition:.25s;backdrop-filter:blur(2px)}
+.card{padding:1.6rem}
+.card:hover{border-color:color-mix(in srgb,var(--moss) 60%,var(--line));transform:translateY(-3px)}
+.card::after,.widget::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,-60%),color-mix(in srgb,var(--firefly) 12%,transparent),transparent 70%)}
+.card h3{font-size:1.25rem;margin:.2rem 0 .5rem}
+.card p{color:var(--muted);font-size:.94rem}
+
+/* Merit-badge patches for hobbies */
+.patch{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:1.35rem;margin-bottom:1rem;position:relative;
+  background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--c) 40%,var(--card)),color-mix(in srgb,var(--c) 18%,var(--card)));color:var(--c);
+  box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--c) 55%,transparent)}
+.patch::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1.5px dashed color-mix(in srgb,var(--c) 70%,transparent)}
+.card .kicker{font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+
+/* Projects: field cards with a terminal strip */
+.proj{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.term{display:flex;align-items:center;gap:.5rem;padding:.65rem 1rem;background:var(--bg-2);border-bottom:1px solid var(--line);font-family:"JetBrains Mono",monospace;font-size:.78rem;color:var(--muted)}
+.term .dots{display:flex;gap:5px;margin-right:.4rem}
+.term .dots i{width:9px;height:9px;border-radius:50%;background:var(--line-2);display:block}
+.term .dots i:nth-child(1){background:#d9783a}.term .dots i:nth-child(2){background:#e9b949}.term .dots i:nth-child(3){background:#8fbf6a}
+.term .path{color:var(--moss)}
+.proj .body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
+.proj .top{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.badge{font-size:.72rem;padding:.25rem .65rem;border-radius:999px;border:1px solid var(--line-2);color:var(--muted);white-space:nowrap}
+.badge.live{color:var(--moss);border-color:color-mix(in srgb,var(--moss) 50%,transparent)}
+.badge.live::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--moss);margin-right:6px;vertical-align:middle;box-shadow:0 0 8px var(--moss)}
+.badge.wip{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 50%,transparent)}
+.tags{display:flex;gap:.4rem;flex-wrap:wrap;margin:1rem 0}
+.tag{font-size:.74rem;padding:.2rem .6rem;border-radius:6px;background:var(--bg-2);color:var(--muted);font-family:"JetBrains Mono",monospace}
+.proj .links-row{margin-top:auto;display:flex;gap:1.2rem;font-size:.9rem;font-weight:600;color:var(--accent)}
+.proj .links-row a:hover{text-decoration:underline}
+
+/* Gear list (tools) */
+.gear{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.5rem 1.2rem;padding:1.4rem 1.6rem;border:1px solid var(--line);border-radius:var(--radius);background:color-mix(in srgb,var(--card) 90%,transparent);
+  background-image:repeating-linear-gradient(transparent 0 37px,color-mix(in srgb,var(--line) 70%,transparent) 37px 38px)}
+.gear-title{display:flex;justify-content:space-between;align-items:baseline;margin:2.4rem 0 .8rem;gap:1rem;flex-wrap:wrap}
+.gear-title h3{font-size:1.2rem}
+.gear-title .hand{font-size:1.35rem;color:var(--moss)}
+.item{display:flex;align-items:center;gap:.6rem;font-size:.92rem;height:38px}
+.item .box{width:18px;height:18px;border:1.5px solid var(--line-2);border-radius:4px;display:grid;place-items:center;font-size:.7rem;color:var(--bg);flex:none}
+.item.done .box{background:var(--moss);border-color:var(--moss)}
+.item i.ico{color:var(--muted);width:16px;text-align:center}
+.item.next{color:var(--muted)}
+
+/* Widgets */
+.widget{padding:1.2rem;display:flex;flex-direction:column;gap:.8rem;overflow:hidden}
+.widget .label{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:.5rem}
+.widget img{max-width:100%;height:auto;display:block;margin:0 auto}
+.widget.center{align-items:center}
+.span-2{grid-column:span 2}
+.discord-frame{width:100%;height:500px;border:0;border-radius:10px;background:var(--bg-2)}
+
+/* About + experience as a trail */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:start}
+.about p{color:var(--muted);margin-bottom:1rem;font-size:1.02rem}
+.about p strong{color:var(--text)}
+.about h3{font-size:1.35rem;margin:2rem 0 .6rem}
+.trail{position:relative;padding-left:2.2rem}
+.trail::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;border-left:2px dashed var(--line-2)}
+.wp{position:relative;padding:0 0 1.5rem}
+.wp .pin{position:absolute;left:-2.2rem;top:.2rem;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:2px solid var(--moss);color:var(--moss);font-size:.65rem}
+.wp .yrs{font-family:"JetBrains Mono",monospace;font-size:.75rem;color:var(--accent);letter-spacing:.06em}
+.wp h4{font-size:1.02rem}
+.wp p{font-size:.9rem;color:var(--muted);margin:0}
+.summit{font-size:1.4rem;color:var(--moss);margin-top:.4rem}
+
+/* Collaborate: wooden trail sign */
+.sign{position:relative;border-radius:14px;padding:2.6rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;color:#f6ead2;
+  background:repeating-linear-gradient(180deg,#6b4423 0 28px,#5e3b1e 28px 30px),#6b4423;border:3px solid #3e2713;box-shadow:0 18px 40px -18px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.06)}
+.sign::before,.sign::after{content:"";position:absolute;top:14px;width:10px;height:10px;border-radius:50%;background:#2c1c0e;box-shadow:inset 0 0 0 2px #8a6a45}
+.sign::before{left:14px}.sign::after{right:14px}
+.sign h2{font-size:2rem;margin-bottom:.6rem}
+.sign p{color:#ead8b6}
+.sign .btn-primary{background:#f3efe2;color:#3e2713;border-color:#f3efe2}
+
+/* Booking */
+.book-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:2rem;align-items:start}
+.cal-frame{width:100%;height:640px;border:0;border-radius:14px;background:#fff}
+.camp{padding:2rem}
+.camp h2{font-size:1.9rem;margin-bottom:1rem}
+.camp svg{width:100%;height:auto;margin-top:1.5rem;color:var(--moss)}
+
+/* Support */
+.support a.card{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.4rem}
+.support .patch{margin:0;width:50px;height:50px;font-size:1.1rem}
+.support h3{font-size:1.05rem;margin:0}
+
+/* Footer forest */
+footer{margin-top:40px;color:var(--muted);font-size:.9rem}
+.forest{display:block;width:100%;height:120px;color:var(--ridge-near)}
+.foot-inner{background:var(--ridge-near);padding:2rem 0 2.6rem}
+:root[data-theme="light"] .foot-inner{color:#eef2e6}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.socials{display:flex;gap:.6rem}
+.socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:grid;place-items:center;transition:.2s}
+.socials a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* Firefly / constellation canvas (ported from Spac3-Gh0st fx.js) */
+#fxBg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.75}
+
+@media (max-width:980px){
+  .g4{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:1fr 1fr}
+  .about,.book-wrap{grid-template-columns:1fr}
+  .log{grid-template-columns:repeat(2,1fr)}
+  .log .stat:nth-child(2){border-right:0}
+  .log .stat:nth-child(-n+2){border-bottom:1px dashed var(--line-2)}
+  .links{gap:1rem}
+}
+@media (max-width:820px){
+  .links{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:1rem 20px;gap:1rem}
+  .links.open{display:flex}
+  .menu-btn{display:grid}
+  .nav-right .btn{display:none}
+}
+@media (max-width:640px){
+  .g4,.g3,.g2{grid-template-columns:1fr}
+  .span-2{grid-column:auto}
+  .hero{padding-top:50px;min-height:640px}
+  .sign{grid-template-columns:1fr;padding:2rem 1.6rem}
+  section{padding:70px 0}
+  .log .stat{padding:1rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="topo-tint" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 26 L11 12 L16 19 L21 9 L30 26 Z" fill="var(--moss)"/><path d="M21 9 L24.5 15 L22 14 L19.5 16 Z" fill="var(--blaze)"/><circle cx="25" cy="6" r="2.5" fill="var(--accent)"/></svg>
+      ꧁ᙅᗣҜӠᙃ꧂
+    </a>
+    <nav class="links" id="links">
+      <a href="#hobbies">Hobbies</a>
+      <a href="#projects">Projects</a>
+      <a href="#stats">GitHub</a>
+      <a href="#community">Discord</a>
+      <a href="#about">About</a>
+      <a href="#collaborate">Collaborate</a>
+      <a href="#support">Donations</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#book" class="btn btn-primary"><i class="fa-solid fa-campground"></i> Book a DayZ build</a>
+      <button class="icon-btn" id="theme" aria-label="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="hero-sky"></div>
+    <svg class="hero-scene" viewBox="0 0 1440 460" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <circle class="layer" data-depth="0.05" cx="1080" cy="120" r="54" fill="var(--sun)" opacity=".9"/>
+      <path class="layer" data-depth="0.12" fill="var(--ridge-far)" d="M0 300 L120 220 L210 260 L330 150 L450 240 L560 190 L690 260 L800 170 L930 230 L1040 140 L1170 230 L1290 180 L1440 250 L1440 460 L0 460 Z"/>
+      <g class="layer" data-depth="0.22">
+        <path fill="var(--ridge-mid)" d="M0 350 L150 280 L260 320 L400 250 L540 320 L660 270 L800 330 L940 260 L1080 320 L1220 270 L1340 310 L1440 290 L1440 460 L0 460 Z"/>
+        <path d="M640 460 C 700 420, 600 400, 680 370 S 760 330, 720 300" fill="none" stroke="var(--blaze)" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" opacity=".55"/>
+      </g>
+      <g class="layer" data-depth="0.35" fill="var(--ridge-near)" id="pines">
+        <path d="M0 400 C 200 370, 380 410, 560 390 S 900 360, 1100 395 S 1340 380, 1440 370 L1440 460 L0 460 Z"/>
+      </g>
+    </svg>
+    <div class="wrap">
+      <div class="eyebrow mono"><span class="blaze"></span>Hello, as you might have already noticed, I go by</div>
+      <h1>꧁ᙅᗣҜӠᙃ꧂</h1>
+      <p class="lead">I like to code—mostly whipping up custom Discord bots and tweaking DayZ servers for fun. On my free time I lightweight-overnight-hike the Appalachian Trail. I FIX CAR FOR MONIES ! !</p>
+      <div class="lanes">
+        <span class="lane"><i class="fa-solid fa-code"></i>Code</span>
+        <span class="lane"><i class="fa-solid fa-wrench"></i>Wrench</span>
+        <span class="lane"><i class="fa-solid fa-person-hiking"></i>Hike</span>
+        <span class="lane"><i class="fa-solid fa-wave-square"></i>Create</span>
+      </div>
+      <div class="ctas">
+        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-signs-post"></i> Projects</a>
+        <a href="https://discord.gg/mahQZmTZxJ" class="btn btn-ghost"><i class="fa-brands fa-discord"></i> Discord</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap trail-log">
+    <div class="log">
+      <div class="stat"><i class="fa-solid fa-music"></i><div><b>15+</b><span>years Music Production</span></div></div>
+      <div class="stat"><i class="fa-solid fa-campground"></i><div><b>10+</b><span>years Event Promotion</span></div></div>
+      <div class="stat"><i class="fa-solid fa-wrench"></i><div><b>8</b><span>years Mechanic</span></div></div>
+      <div class="stat"><i class="fa-solid fa-gamepad"></i><div><b>5</b><span>years Development</span></div></div>
+    </div>
+  </div>
+
+  <section id="hobbies">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="marker"><span class="blaze"></span>Trail marker 01</div><h2>Hobbies</h2></div><p>Life’s too short to stick to one lane. Here’s what fuels my fire:</p></div>
+      <div class="grid g3">
+        <div class="card" style="--c:#8fbf6a"><div class="patch"><i class="fa-solid fa-gamepad"></i></div><h3>Gaming</h3><p>I’m deep into DayZ (building servers, modding files and surviving), GTA V, Session Skate Sim, and Ghost of Tsushima. Expect me to nerd out over open-world chaos or samurai vibes.</p></div>
+        <div class="card" style="--c:#c48bd8"><div class="patch"><i class="fa-solid fa-wave-square"></i></div><h3>Music</h3><p>Always got Spotify or Soundcloud blasting, from lo-fi to trap to in your face DnB. I create my own tracks using my Boss RC-505 Loopstation and MacBook, layering beats like I layer code.</p></div>
+        <div class="card" style="--c:#6fb3c9"><div class="patch"><i class="fa-solid fa-mountain-sun"></i></div><h3>Outdoor Life</h3><p>Lightweight overnight hikes on the Appalachian Trail, skiing and snowboarding down fresh powder, skateboarding city streets when the mood strikes, weekend cookouts ( food is life ).</p></div>
+        <div class="card" style="--c:#e98b6a"><div class="patch"><i class="fa-solid fa-spray-can"></i></div><h3>Creative Arts</h3><p>Basic projection mapping for trippy visuals and immersive gatherings, graffiti-inspired designs, and CAD for precision projects and 3D renders. GIMP is my go-to for quick edits and creating images to upload to Day Z Servers.</p></div>
+        <div class="card" style="--c:#e9b949"><div class="patch"><i class="fa-solid fa-microchip"></i></div><h3>Tech Toys</h3><p>My GMK Tec M7 NUCbox is awesome for DayZ edits. It will be even more of a beast when I add on an nVIDIA graphics card. I’m also itching to dive into Raspberry Pi and the FlipperZero and Blender for new creations.</p></div>
+        <div class="card" style="--c:#d9783a"><div class="patch"><i class="fa-solid fa-wrench"></i></div><h3>Mechanic</h3><p>Fixing cars for a living, from diagnostics to full rebuilds. I drive a Subaru WRX, so I live for performance. 🚗💨</p></div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="ridge-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 L80 30 L140 42 L230 14 L320 40 L420 22 L520 46 L640 18 L760 44 L880 26 L990 48 L1100 20 L1220 40 L1330 24 L1440 44" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="marker"><span class="blaze"></span>Trail marker 02</div><h2>Projects</h2></div><p>Most everything I've coded has been used with these platforms. They've been quite straight forward and ive enjoyed using them, bringing communities to life with interactive features, for all of my projects.</p></div>
+      <div class="grid g2">
+        <div class="card proj">
+          <div class="term"><span class="dots"><i></i><i></i><i></i></span><span class="path">real-CAK3D/CAK3DBot</span></div>
+          <div class="body">
+            <div class="top"><h3>CAK3DBot</h3><span class="badge wip">Work in progress</span></div>
+            <p>A Discord Server Bot for the ꧁ᙃᥲყ Z ᙅᗣҜӠᙃ꧂ Discord and DayZ Servers. At the moment I have Livonia and Sakhal up and running, with Chernarus on the way soon! The bot is still a work in progress and will most likley be finished end of 2025.</p>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">Discord.js</span><span class="tag">MongoDB</span><span class="tag">Heroku</span></div>
+            <div class="links-row"><a href="https://github.com/real-CAK3D/CAK3DBot">GitHub →</a><a href="https://discord.gg/6NFd2cx9KU">Discord →</a></div>
+          </div>
+        </div>
+        <div class="card proj">
+          <div class="term"><span class="dots"><i></i><i></i><i></i></span><span class="path">God's of Z / ZBot</span></div>
+          <div class="body">
+            <div class="top"><h3>ZBot</h3><span class="badge live">Live</span></div>
+            <p>The all-seeing, all-doing powerhouse that keeps the God's of Z's server running day in and day out. Backup bot for CAK3DBot.</p>
+            <div class="tags"><span class="tag">Node.js</span><span class="tag">Discord.js</span></div>
+            <div class="links-row"><a href="http://www.discord.gg/8J5F9KjkS6">Discord →</a></div>
+          </div>
+        </div>
+        <div class="card proj">
+          <div class="term"><span class="dots"><i></i><i></i><i></i></span><span class="path">Sullivan Connect</span></div>
+          <div class="body">
+            <div class="top"><h3>Sullivan Connect</h3><span class="badge">Private</span></div>
+            <p>Sullivan Connect is your trusty shop companion, designed to streamline the day-to-day operations of your Auto Location. Full inventory and re-stock system. Interactive "Team" point system.</p>
+            <div class="tags"><span class="tag">Discord.js</span><span class="tag">Auto shop</span></div>
+            <div class="links-row"><span style="color:var(--muted)">Private Bot ( no link available )</span></div>
+          </div>
+        </div>
+        <div class="card proj">
+          <div class="term"><span class="dots"><i></i><i></i><i></i></span><span class="path">Nitrado / DayZ</span></div>
+          <div class="body">
+            <div class="top"><h3>the ᙃᥲყⱿZ ᙅᗣҜӠᙃ Nitrado Servers</h3><span class="badge live">Live</span></div>
+            <p>The Nitrado Servers created by ᙅᗣҜӠᙃ. My DayZ server tweaks are all about glitch-free experiences. I enjoy a very immersive realistic feel when it comes to gaming, so thats what I aim to provide with my edits. You can always expect some ammount of struggle with a nice relaxing accomplished feel.</p>
+            <div class="tags"><span class="tag">DayZ Editor</span><span class="tag">Nitrado</span></div>
+            <div class="links-row"><a href="https://server.nitrado.net/eng/donations/donate2/5301837/0">NITRADO Donations →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-title"><h3>Gear list</h3><span class="hand">All of the following programs were used in the making of these projects.</span></div>
+      <div class="gear">
+        <span class="item done"><span class="box">✓</span><i class="ico fa-brands fa-js"></i>JavaScript</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-brands fa-node-js"></i>Node.js</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-solid fa-rotate"></i>Nodemon</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-brands fa-npm"></i>npm</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-brands fa-discord"></i>Discord.js</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-solid fa-code"></i>VS Code</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-brands fa-git-alt"></i>Git</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-brands fa-github"></i>GitHub Actions</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-solid fa-leaf"></i>MongoDB</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-solid fa-cloud"></i>Heroku</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-brands fa-unity"></i>Unity</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-solid fa-cube"></i>Unreal Engine</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-solid fa-image"></i>GIMP</span>
+        <span class="item done"><span class="box">✓</span><i class="ico fa-solid fa-bolt"></i>IFTTT</span>
+      </div>
+    </div>
+  </section>
+
+  <svg class="ridge-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 L110 22 L200 44 L310 18 L400 36 L520 12 L630 40 L720 26 L840 48 L960 16 L1060 38 L1180 22 L1300 46 L1440 28" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+
+  <section id="stats">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="marker"><span class="blaze"></span>Trail marker 03</div><h2>GitHub</h2></div></div>
+      <div class="grid g2">
+        <div class="widget center span-2">
+          <a href="https://github.com/real-CAK3D"><img src="https://github-widgetbox.vercel.app/api/profile?username=real-CAK3D&data=followers,repositories,stars,commits&theme=nautilus" alt="GitHub profile widget"></a>
+        </div>
+        <div class="widget center">
+          <img src="https://github-readme-stats.vercel.app/api?username=real-CAK3D&show_icons=true&include_all_commits=true&count_private=true&theme=gruvbox&hide_border=true&bg_color=00000000" alt="GitHub stats">
+        </div>
+        <div class="widget center">
+          <img src="https://streak-stats.demolab.com?user=real-CAK3D&mode=daily&theme=gruvbox&hide_border=true&background=00000000" alt="Contribution streak">
+        </div>
+        <div class="widget center span-2">
+          <a href="https://stats.hyo.dev/stats/real-CAK3D"><img src="https://stats.hyo.dev/api/github-stats-advanced?login=real-CAK3D" alt="Advanced GitHub stats" style="max-width:600px;width:100%"></a>
+        </div>
+        <div class="widget span-2">
+          <span class="label"><i class="fa-solid fa-star"></i> Super Mario</span>
+          <img class="theme-img"
+               data-dark="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/mario-contribution-graph-dark.svg"
+               data-light="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/mario-contribution-graph.svg"
+               src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/mario-contribution-graph-dark.svg" alt="Super Mario contribution animation">
+        </div>
+        <div class="widget span-2">
+          <span class="label"><i class="fa-solid fa-ghost"></i> Pac-Man</span>
+          <img class="theme-img"
+               data-dark="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/pacman-contribution-graph-dark.svg"
+               data-light="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/pacman-contribution-graph.svg"
+               src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/pacman-contribution-graph-dark.svg" alt="Pac-Man contribution animation">
+        </div>
+        <div class="widget span-2">
+          <span class="label"><i class="fa-solid fa-worm"></i> Snake</span>
+          <img class="theme-img"
+               data-dark="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-snake-dark.svg"
+               data-light="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-snake.svg"
+               src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-snake-dark.svg" alt="Snake contribution animation">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="marker"><span class="blaze"></span>Trail marker 04 · basecamp</div><h2>Discord</h2></div></div>
+      <div class="grid g2">
+        <div class="widget">
+          <span class="label"><i class="fa-brands fa-discord"></i> ꧁ᙃᥲყⱿ ᙅᗣҜӠᙃ꧂ · CAK3DBot</span>
+          <iframe class="discord-frame" src="https://discord.com/widget?id=1113078006278275184&theme=dark" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" title="CAK3D Discord server"></iframe>
+        </div>
+        <div class="widget">
+          <span class="label"><i class="fa-brands fa-discord"></i> God's of Z · ZBot</span>
+          <iframe class="discord-frame" src="https://discord.com/widget?id=1343750278792351838&theme=dark" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" title="God's of Z Discord server"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="ridge-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 L90 28 L190 40 L300 12 L410 38 L500 24 L620 48 L730 20 L850 42 L950 26 L1070 46 L1190 16 L1310 38 L1440 26" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <div class="sec-head" style="margin-bottom:1.5rem"><div><div class="marker"><span class="blaze"></span>Trail marker 05</div><h2>About me</h2></div></div>
+        <p>I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you name it—and I live for music, always spinning tracks on Spotify, creating my own works or attending concerts or festivals. My creative spark extends to projection mapping, music production, and even CAD and other Digital Designs, all fueled by a relentless curiosity and a DIY ethos.</p>
+        <p>I’ve promoted and curated several music festivals, handpicking artists and crafting immersive vibes that blend sound, visuals, and community. From underground raves to open-air gatherings, I’ve attended countless festivals, soaking in the energy and channeling it into my own creations.</p>
+        <h3>Creative Tech</h3>
+        <p>From projection mapping to music production on my Boss RC-505 and Macbook Air, I blend visuals and sound, creating my own perspective of the world. My GMK Tec M7 NUCbox is my go-to for DayZ editor builds—small but mighty!</p>
+        <h3>Education</h3>
+        <p><strong>Self Taught</strong> — Coding, music, and more—learned through trial, error, and endless curiosity.<br>Highschool Diploma</p>
+        <div class="widget" style="margin-top:1.5rem">
+          <span class="label"><i class="fa-brands fa-spotify"></i> Spotify</span>
+          <a href="https://open.spotify.com/user/rastaman_420"><img src="https://spotify-recently-played-readme.vercel.app/api?user=rastaman_420&count=1" alt="Spotify recently played" style="margin:0"></a>
+        </div>
+      </div>
+      <div>
+        <div class="sec-head" style="margin-bottom:1.5rem"><div><div class="marker"><span class="blaze"></span>Elevation gained</div><h2>Experience</h2></div></div>
+        <div class="trail">
+          <div class="wp"><span class="pin"><i class="fa-solid fa-music"></i></span><div class="yrs">15+ years</div><h4>Music Production 🎵</h4><p>Producing tracks with a focus on layering and live looping.</p></div>
+          <div class="wp"><span class="pin"><i class="fa-solid fa-campground"></i></span><div class="yrs">10+ years</div><h4>Event Promotion 🎉</h4><p>Promoted and curated several music festivals.</p></div>
+          <div class="wp"><span class="pin"><i class="fa-solid fa-wrench"></i></span><div class="yrs">8 years</div><h4>Mechanic 🔧</h4><p>Fixing cars for a living, from diagnostics to full rebuilds.</p></div>
+          <div class="wp"><span class="pin"><i class="fa-solid fa-gamepad"></i></span><div class="yrs">5 years</div><h4>Development 🎮</h4><p>Dabbled in Unity, Unreal Engine, and DayZ editor and server builds.</p></div>
+          <div class="wp"><span class="pin"><i class="fa-solid fa-code"></i></span><div class="yrs">3 years</div><h4>Programming 💻</h4><p>JavaScript, Node.js, NPM, Discord.js. Comfortable with Visual Studio Code, Git, GitHub, GitHub Actions, MongoDB, Heroku.</p></div>
+          <div class="wp" style="padding-bottom:0"><span class="pin"><i class="fa-solid fa-compass-drafting"></i></span><div class="yrs">3 years</div><h4>CAD 📐</h4><p>Creating precise designs for mechanical and creative projects.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="collaborate">
+    <div class="wrap">
+      <div class="sign">
+        <div><h2>Collaborate</h2><p>Got an idea for a bot, server, or project? 🤖 Want to talk cars 🚗, code 💻, or cosmic mysteries 🌌? Let’s layer some unreal magic together, CAK3D-style ✨. There are still a few programs I’d like to start/incorporate into some projects that I haven’t dabbled in yet. If you have any pros or cons about any of the below, feel free to drop a message in the chat in the lower right corner of the page 📩.</p></div>
+        <a class="btn btn-primary" href="https://discord.gg/mahQZmTZxJ"><i class="fa-brands fa-discord"></i> Discord</a>
+      </div>
+      <div class="gear" style="margin-top:1.4rem">
+        <span class="item next"><span class="box"></span><i class="ico fa-brands fa-python"></i>Python</span>
+        <span class="item next"><span class="box"></span><i class="ico fa-brands fa-raspberry-pi"></i>Raspberry Pi</span>
+        <span class="item next"><span class="box"></span><i class="ico fa-solid fa-database"></i>SQLite</span>
+        <span class="item next"><span class="box"></span><i class="ico fa-brands fa-aws"></i>AWS</span>
+        <span class="item next"><span class="box"></span><i class="ico fa-solid fa-shapes"></i>Blender</span>
+        <span class="item next"><span class="box"></span><i class="ico fa-solid fa-palette"></i>Canva</span>
+        <span class="item next"><span class="box"></span><i class="ico fa-brands fa-docker"></i>Docker</span>
+        <span class="item next"><span class="box"></span><i class="ico fa-solid fa-database"></i>MySQL</span>
+        <span class="item next"><span class="box"></span><i class="ico fa-solid fa-terminal"></i>Replit</span>
+        <span class="item next"><span class="box"></span><i class="ico fa-brands fa-slack"></i>Slack</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="marker"><span class="blaze"></span>Trail marker 06</div><h2>Booking</h2></div></div>
+      <div class="book-wrap">
+        <div class="card camp">
+          <h2>Want to book a DayZ Editor Build?</h2>
+          <a class="btn btn-ghost" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1HngNEL6goNuJZbdsJSRgDCU-JKBKkS0nqnJARcsCUt-MNs53D58yN4zRUkcjzT2lG7gpJOg_-?gv=true"><i class="fa-solid fa-up-right-from-square"></i> Open in new tab</a>
+          <svg viewBox="0 0 300 120" aria-hidden="true">
+            <path d="M0 110 L300 110" stroke="currentColor" stroke-width="2" opacity=".5"/>
+            <path d="M60 110 L110 40 L160 110 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M110 40 L110 110 M96 110 L110 82 L124 110" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M210 110 l14 -26 l14 26 z M214 92 l10 -20 l10 20 z M218 76 l6 -14 l6 14 z" fill="currentColor" opacity=".8"/>
+            <path d="M250 110 l10 -20 l10 20 z M253 96 l7 -14 l7 14 z" fill="currentColor" opacity=".6"/>
+            <g transform="translate(180 104)"><path d="M-8 6 L8 -2 M-8 -2 L8 6" stroke="var(--rust)" stroke-width="3" stroke-linecap="round"/><path d="M0 -4 C -6 -10, 2 -14, 0 -22 C 6 -14, 8 -8, 0 -4 Z" fill="var(--accent)"/></g>
+          </svg>
+        </div>
+        <iframe class="cal-frame" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1HngNEL6goNuJZbdsJSRgDCU-JKBKkS0nqnJARcsCUt-MNs53D58yN4zRUkcjzT2lG7gpJOg_-?gv=true" title="Book a DayZ Editor Build"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="marker"><span class="blaze"></span>Trail marker 07</div><h2>Donations &amp; Subscriptions</h2></div></div>
+      <div class="grid g4 support">
+        <a class="card" href="https://paypal.me/CAK3D" style="--c:#6fb3c9"><div class="patch"><i class="fa-brands fa-paypal"></i></div><h3>PayPal</h3></a>
+        <a class="card" href="https://buymeacoffee.com/CAK3D" style="--c:#e9b949"><div class="patch"><i class="fa-solid fa-mug-hot"></i></div><h3>Buy Me a Coffee</h3></a>
+        <a class="card" href="https://server.nitrado.net/eng/donations/donate2/5301837/0" style="--c:#8fbf6a"><div class="patch"><i class="fa-solid fa-server"></i></div><h3>Nitrado</h3></a>
+        <a class="card" href="https://www.patreon.com/CAK3D" style="--c:#e98b6a"><div class="patch"><i class="fa-brands fa-patreon"></i></div><h3>Patreon</h3></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <svg class="forest" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" id="forest"><path d="M0 120 L0 90 L1440 90 L1440 120 Z" fill="currentColor"/></svg>
+  <div class="foot-inner">
+    <div class="wrap foot">
+      <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+        <img src="https://visitor-badge.laobi.icu/badge?page_id=real-CAK3D.real-CAK3D&left_color=gray&right_color=olivedrab" alt="Visitor count">
+        <span>Host Site for real-CAK3D Creations.</span>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/real-CAK3D" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://discord.gg/mahQZmTZxJ" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://www.youtube.com/@real_cak3d" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.twitch.tv/real_cak3d" aria-label="Twitch"><i class="fa-brands fa-twitch"></i></a>
+        <a href="https://www.instagram.com/real_cak3d" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/_CAK3D_" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const root=document.documentElement, t=document.getElementById('theme');
+function setTheme(m){root.dataset.theme=m;document.querySelectorAll('.theme-img').forEach(i=>i.src=i.dataset[m]);t.innerHTML=m==='light'?'<i class="fa-solid fa-moon"></i>':'<i class="fa-solid fa-sun"></i>';try{localStorage.setItem('theme',m)}catch(e){}}
+try{setTheme(localStorage.getItem('theme')||'dark')}catch(e){setTheme('dark')}
+t.onclick=()=>setTheme(root.dataset.theme==='light'?'dark':'light');
+const links=document.getElementById('links');
+document.getElementById('menu').onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+
+// Pine trees along the near ridge and the footer treeline (seeded so they stay put)
+(function(){
+  let s=7; const rnd=()=>(s=(s*16807)%2147483647)/2147483647;
+  const pine=(x,base,h)=>{const w=h*.42;return `M${x} ${base-h} L${x+w*.55} ${base-h*.55} L${x+w*.3} ${base-h*.55} L${x+w*.75} ${base-h*.2} L${x+w*.45} ${base-h*.2} L${x+w} ${base} L${x-w} ${base} L${x-w*.45} ${base-h*.2} L${x-w*.75} ${base-h*.2} L${x-w*.3} ${base-h*.55} L${x-w*.55} ${base-h*.55} Z`};
+  let d='';
+  for(let x=-10;x<1460;x+=14+rnd()*26){const base=392+Math.sin(x/120)*10;d+=pine(x,base+8,40+rnd()*60)}
+  const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',d);document.getElementById('pines').appendChild(p);
+  let f='';
+  for(let x=-10;x<1460;x+=10+rnd()*18){f+=pine(x,96,30+rnd()*60)}
+  const fp=document.createElementNS('http://www.w3.org/2000/svg','path');fp.setAttribute('d',f);fp.setAttribute('fill','currentColor');document.getElementById('forest').appendChild(fp);
+})();
+
+// Gentle parallax on the hero ridges
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const layers=[...document.querySelectorAll('.hero-scene .layer')];let ticking=false;
+  addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{const y=scrollY;layers.forEach(l=>l.style.transform=`translateY(${y*l.dataset.depth}px)`);ticking=false})},{passive:true});
+})();
+
+// Firefly constellation: drifting points that link up and lean toward the cursor.
+// Ported from Spac3-Gh0st fx.js. ~30fps, pauses when hidden, off under reduced motion.
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const cv=document.createElement('canvas'); cv.id='fxBg'; cv.setAttribute('aria-hidden','true');
+  document.body.insertBefore(cv,document.body.firstChild);
+  const c=cv.getContext('2d'), bg={pts:[],w:0,h:0,mx:-999,my:-999,last:0};
+  function resize(){
+    const dpr=Math.min(devicePixelRatio||1,1.5); bg.w=innerWidth; bg.h=innerHeight;
+    cv.width=bg.w*dpr; cv.height=bg.h*dpr; c.setTransform(dpr,0,0,dpr,0,0);
+    const n=Math.round(Math.min(70,bg.w*bg.h/26000)); bg.pts=[];
+    for(let i=0;i<n;i++) bg.pts.push({x:Math.random()*bg.w,y:Math.random()*bg.h,vx:(Math.random()-.5)*18,vy:(Math.random()-.5)*18,r:.8+Math.random()*1.4,ph:Math.random()*6.28});
+  }
+  addEventListener('resize',resize); resize();
+  addEventListener('pointermove',e=>{bg.mx=e.clientX;bg.my=e.clientY},{passive:true});
+  const hex=a=>Math.round(Math.max(0,Math.min(255,a))).toString(16).padStart(2,'0');
+  function frame(ts){
+    requestAnimationFrame(frame);
+    if(document.hidden||ts-bg.last<33) return;
+    const dt=bg.last?Math.min((ts-bg.last)/1000,.05):.016; bg.last=ts;
+    const col=getComputedStyle(root).getPropertyValue('--firefly').trim()||'#c9e27a', L=130;
+    c.clearRect(0,0,bg.w,bg.h);
+    for(const p of bg.pts){
+      p.x+=p.vx*dt; p.y+=p.vy*dt; if(p.x<0||p.x>bg.w)p.vx*=-1; if(p.y<0||p.y>bg.h)p.vy*=-1;
+      const dx=bg.mx-p.x, dy=bg.my-p.y, d=Math.hypot(dx,dy); if(d<160&&d>1){p.x+=dx/d*14*dt;p.y+=dy/d*14*dt}
+    }
+    c.lineWidth=1;
+    for(let i=0;i<bg.pts.length;i++){
+      const a=bg.pts[i];
+      for(let j=i+1;j<bg.pts.length;j++){const b=bg.pts[j],d=Math.hypot(a.x-b.x,a.y-b.y); if(d<L){c.strokeStyle=col+hex((1-d/L)*60);c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.stroke()}}
+      const dm=Math.hypot(a.x-bg.mx,a.y-bg.my); if(dm<170){c.strokeStyle=col+hex((1-dm/170)*120);c.beginPath();c.moveTo(a.x,a.y);c.lineTo(bg.mx,bg.my);c.stroke()}
+      // firefly pulse
+      const glow=.55+.45*Math.sin(ts/600+a.ph);
+      c.fillStyle=col+hex(60*glow); c.beginPath(); c.arc(a.x,a.y,a.r*3.2,0,6.2832); c.fill();
+      c.fillStyle=col+hex(220*glow); c.beginPath(); c.arc(a.x,a.y,a.r,0,6.2832); c.fill();
+    }
+  }
+  requestAnimationFrame(frame);
+})();
+
+// Card spotlight follows the cursor
+document.addEventListener('pointermove',e=>{
+  const card=e.target.closest&&e.target.closest('.card,.widget'); if(!card) return;
+  const r=card.getBoundingClientRect(); card.style.setProperty('--mx',(e.clientX-r.left)+'px'); card.style.setProperty('--my',(e.clientY-r.top)+'px');
+},{passive:true});
+</script>
+
+<!-- WidgetBot Discord chat bubble -->
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+  new Crate({
+    server: '1113078006278275184', // ꧁ᙃᥲყⱿ ᙅᗣҜӠᙃ꧂
+    channel: '1360089441057767507' // #external
+  })
+</script>
+
+<!-- Elfsight AI chatbot -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-cf9691e7-f718-4ae7-9ef4-861ef7c11b55" data-elfsight-app-lazy></div>
+</body>
+</html>
