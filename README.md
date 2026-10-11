@@ -13,35 +13,21 @@
 
 <a href="https://stats.hyo.dev/stats/real-CAK3D"><img src="https://stats.hyo.dev/api/github-stats-advanced?login=real-CAK3D" width="600" /></a>
 
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="
-      https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-breek-dark.svg
-    "
-  />
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="
-      https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-breek.svg
-    "
-  />
-  <img
-    alt="github contribution grid breek animation"
-    src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-breek.svg"
-  />
-</picture>
-
 <div align="center">
-  <img src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/pacman-contribution-graph.svg" alt="pacman contribution graph" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/mario-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/mario-contribution-graph.svg">
+  <img alt="Super Mario contribution graph" src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/mario-contribution-graph.svg">
+</picture>
 </div>
 
-
+<div align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D/output/pacman-contribution-graph.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/pacman-contribution-graph.svg">
 </picture>
+</div>
 
 <h3 align="left">About me :</h3>
 
@@ -303,7 +289,11 @@ I’m a gamer at heart—DayZ, GTA V, Ghost of Tsushima, SESSION Skate Sim, you 
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-snake.svg" alt="Snake animation" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-snake.svg">
+  <img alt="Snake animation" src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/github-contribution-grid-snake.svg">
+</picture>
 </div>
 
  # real-CAK3D.github.io #
