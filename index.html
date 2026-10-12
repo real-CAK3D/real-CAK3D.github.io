@@ -382,7 +382,7 @@ footer{margin-top:40px;color:var(--muted);font-size:.9rem}
         </div>
         <div class="widget span-2">
           <span class="label"><i class="fa-solid fa-star"></i> Super Mario</span>
-          <img class="theme-img"
+          <img class="theme-img" id="mario"
                data-dark="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/mario-contribution-graph-dark.svg"
                data-light="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/mario-contribution-graph.svg"
                src="https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/mario-contribution-graph-dark.svg" alt="Super Mario contribution animation">
@@ -528,6 +528,14 @@ footer{margin-top:40px;color:var(--muted);font-size:.9rem}
 </footer>
 
 <script>
+// Random Mario level per visit (the README rotates through them every 12h instead)
+(function(){
+  const levels=['classic','castle','shell-toss','koopa-troop','goomba-rush','warp-zone'];
+  const pick=levels[Math.floor(Math.random()*levels.length)], img=document.getElementById('mario');
+  const base='https://raw.githubusercontent.com/real-CAK3D/real-CAK3D.github.io/output/mario-'+pick;
+  img.dataset.light=base+'.svg'; img.dataset.dark=base+'-dark.svg';
+})();
+
 const root=document.documentElement, t=document.getElementById('theme');
 function setTheme(m){root.dataset.theme=m;document.querySelectorAll('.theme-img').forEach(i=>i.src=i.dataset[m]);t.innerHTML=m==='light'?'<i class="fa-solid fa-moon"></i>':'<i class="fa-solid fa-sun"></i>';try{localStorage.setItem('theme',m)}catch(e){}}
 try{setTheme(localStorage.getItem('theme')||'dark')}catch(e){setTheme('dark')}

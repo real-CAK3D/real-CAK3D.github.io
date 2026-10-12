@@ -38,7 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: generate mario-contribution-graph.svg
-        run: node .github/mario/mario-graph.mjs --user real-CAK3D --out dist
+        run: node .github/mario/mario-graph.mjs --user real-CAK3D --out dist --all
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
