@@ -55,6 +55,17 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 8
 .btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .btn-ghost{background:color-mix(in srgb,var(--card) 70%,transparent)}
 .btn-ghost:hover{border-color:var(--moss);color:var(--moss)}
+.hub-banner{display:flex;align-items:center;gap:1.1rem;margin-bottom:1.4rem;padding:1.1rem 1.3rem;border-radius:var(--radius);
+  border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line-2));
+  background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 14%,var(--card)),var(--card));transition:.25s;color:var(--text)}
+.hub-banner:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.hub-banner .hb-ic{flex:0 0 auto;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--accent);color:#16120a;font-size:1.3rem}
+.hub-banner .hb-txt{flex:1 1 auto;min-width:0}
+.hub-banner .hb-k{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.hub-banner h3{margin:.15rem 0 .25rem;font-size:1.08rem}
+.hub-banner p{color:var(--muted);font-size:.9rem;margin:0}
+.hub-banner .hb-go{flex:0 0 auto;align-self:center;display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap;font-weight:600;font-size:.9rem;color:var(--accent)}
+@media(max-width:640px){.hub-banner{flex-wrap:wrap}.hub-banner .hb-go{width:100%}}
 
 /* ---------- Hero: layered ridges ---------- */
 .hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-start;overflow:hidden;padding-top:80px}
@@ -230,6 +241,7 @@ footer{margin-top:40px;color:var(--muted);font-size:.9rem}
     <nav class="links" id="links">
       <a href="#hobbies">Hobbies</a>
       <a href="#projects">Projects</a>
+      <a href="https://cak3dcreations.vercel.app" target="_blank" rel="noopener">Apps&nbsp;↗</a>
       <a href="#stats">GitHub</a>
       <a href="#community">Discord</a>
       <a href="#about">About</a>
@@ -269,7 +281,8 @@ footer{margin-top:40px;color:var(--muted);font-size:.9rem}
         <span class="lane"><i class="fa-solid fa-wave-square"></i>Create</span>
       </div>
       <div class="ctas">
-        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-signs-post"></i> Projects</a>
+        <a href="https://cak3dcreations.vercel.app" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> Explore my apps</a>
+        <a href="#projects" class="btn btn-ghost"><i class="fa-solid fa-signs-post"></i> Projects</a>
         <a href="https://discord.gg/mahQZmTZxJ" class="btn btn-ghost"><i class="fa-brands fa-discord"></i> Discord</a>
       </div>
     </div>
@@ -303,6 +316,15 @@ footer{margin-top:40px;color:var(--muted);font-size:.9rem}
   <section id="projects">
     <div class="wrap">
       <div class="sec-head"><div><div class="marker"><span class="blaze"></span>Trail marker 02</div><h2>Projects</h2></div><p>Most everything I've coded has been used with these platforms. They've been quite straight forward and ive enjoyed using them, bringing communities to life with interactive features, for all of my projects.</p></div>
+      <a class="hub-banner" href="https://cak3dcreations.vercel.app" target="_blank" rel="noopener">
+        <div class="hb-ic"><i class="fa-solid fa-layer-group"></i></div>
+        <div class="hb-txt">
+          <div class="hb-k">CAK3D_Creations · the build hub</div>
+          <h3>See all my apps, firmware &amp; interactive projects →</h3>
+          <p>Flying Flocks, trail nav, 3D worlds, music players and more — try them in your browser or grab the APK.</p>
+        </div>
+        <span class="hb-go">Open hub <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+      </a>
       <div class="grid g2">
         <div class="card proj">
           <div class="term"><span class="dots"><i></i><i></i><i></i></span><span class="path">real-CAK3D/CAK3DBot</span></div>
