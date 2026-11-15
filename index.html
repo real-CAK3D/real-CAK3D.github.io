@@ -42,7 +42,7 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 8
 .nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
 .brand{font-weight:700;font-size:1.15rem;display:flex;align-items:center;gap:.6rem;white-space:nowrap}
 .brand svg{width:30px;height:30px}
-.links{display:flex;gap:1.4rem;font-size:.9rem;color:var(--muted)}
+.links{display:flex;gap:1.05rem;font-size:.9rem;color:var(--muted)}
 .links a{position:relative}
 .links a:hover{color:var(--text)}
 .links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--accent);transform:scaleX(0);transition:.2s;transform-origin:left}
@@ -66,6 +66,17 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 8
 .hub-banner p{color:var(--muted);font-size:.9rem;margin:0}
 .hub-banner .hb-go{flex:0 0 auto;align-self:center;display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap;font-weight:600;font-size:.9rem;color:var(--accent)}
 @media(max-width:640px){.hub-banner{flex-wrap:wrap}.hub-banner .hb-go{width:100%}}
+/* "Most active right now" strip, fed by the Observatory's daily snapshot */
+.pulse{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:-.6rem 0 1.4rem;padding:.8rem 1.1rem;border-radius:var(--radius);
+  border:1px dashed var(--line-2);background:color-mix(in srgb,var(--card) 80%,transparent);color:var(--text);transition:.2s}
+.pulse:hover{border-color:var(--moss)}
+.pulse[hidden]{display:none}
+.pulse .pk{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+.pulse .pl{display:flex;gap:.5rem;flex-wrap:wrap;flex:1 1 auto}
+.pulse .pc{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;padding:.25rem .7rem;border-radius:999px;border:1px solid var(--line-2);background:var(--card)}
+.pulse .pc b{font-family:Fraunces,serif;color:var(--accent)}
+.pulse .pc small{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:.7rem}
+.pulse .pgo{font-weight:600;font-size:.88rem;color:var(--moss);white-space:nowrap}
 
 /* ---------- Hero: layered ridges ---------- */
 .hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-start;overflow:hidden;padding-top:80px}
@@ -212,10 +223,13 @@ footer{margin-top:40px;color:var(--muted);font-size:.9rem}
   .log .stat:nth-child(-n+2){border-bottom:1px dashed var(--line-2)}
   .links{gap:1rem}
 }
-@media (max-width:820px){
+/* Nine nav links only fit on wide screens; below that they fold into the menu button. */
+@media (max-width:1240px){
   .links{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:1rem 20px;gap:1rem}
   .links.open{display:flex}
   .menu-btn{display:grid}
+}
+@media (max-width:820px){
   .nav-right .btn{display:none}
 }
 @media (max-width:640px){
@@ -242,6 +256,7 @@ footer{margin-top:40px;color:var(--muted);font-size:.9rem}
       <a href="#hobbies">Hobbies</a>
       <a href="#projects">Projects</a>
       <a href="https://cak3dcreations.vercel.app" target="_blank" rel="noopener">Apps&nbsp;↗</a>
+      <a href="observatory.html">Observatory</a>
       <a href="#stats">GitHub</a>
       <a href="#community">Discord</a>
       <a href="#about">About</a>
@@ -324,6 +339,11 @@ footer{margin-top:40px;color:var(--muted);font-size:.9rem}
           <p>Flying Flocks, trail nav, 3D worlds, music players and more — try them in your browser or grab the APK.</p>
         </div>
         <span class="hb-go">Open hub <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+      </a>
+      <a class="pulse" href="observatory.html" id="pulse" hidden>
+        <span class="pk"><i class="fa-solid fa-fire"></i> Most active right now</span>
+        <span class="pl" id="pulse-list"></span>
+        <span class="pgo">Observatory <i class="fa-solid fa-arrow-right"></i></span>
       </a>
       <div class="grid g2">
         <div class="card proj">
@@ -550,6 +570,25 @@ footer{margin-top:40px;color:var(--muted);font-size:.9rem}
 </footer>
 
 <script>
+// "Most active right now": top 3 builds from the Observatory snapshot, scored the
+// same way as observatory.html's 30-day ranking.
+(async function(){
+  try{
+    const d=await fetch('data/observatory.json',{cache:'no-store'}).then(r=>r.ok?r.json():null); if(!d) return;
+    const since=new Date(Date.now()-30*864e5).toISOString().slice(0,10);
+    const ranked=d.apps.map(a=>{
+      const h=d.history[a.slug]||{};
+      const views=Object.keys(h).filter(k=>k>=since).reduce((n,k)=>n+(h[k].v||0),0);
+      const dl=(a.github?.downloads.byRelease||[]).filter(r=>r.date>=since).reduce((n,r)=>n+r.downloads,0);
+      return {name:a.name,score:dl*4+views+(a.live?.mau||0)*6,dl:a.github?.downloads.total||0};
+    }).filter(a=>a.score>0).sort((a,b)=>b.score-a.score).slice(0,3);
+    if(!ranked.length) return;
+    const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    document.getElementById('pulse-list').innerHTML=ranked.map((a,i)=>`<span class="pc"><b>${i+1}</b>${esc(a.name)}<small>${a.dl} dl</small></span>`).join('');
+    document.getElementById('pulse').hidden=false;
+  }catch(e){}
+})();
+
 // Random Mario level per visit (the README rotates through them every 12h instead)
 (function(){
   const levels=['classic','castle','shell-toss','koopa-troop','goomba-rush','warp-zone'];
