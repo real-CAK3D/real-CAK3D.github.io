@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Observatory · ꧁ᙅᗣҜӠᙃ꧂</title>
+<meta name="description" content="Which CAK3D builds are getting the most use: downloads, visits and live app activity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}</script>
+<style>
+:root{
+  --bg:#0a130f; --bg-2:#0f1b15; --card:#12201a; --line:#22372c; --line-2:#2f4a3b;
+  --text:#e9efe4; --muted:#9db0a2; --accent:#e9b949; --moss:#8fbf6a; --rust:#d9783a; --sky:#6fb3c9;
+  --ridge-far:#16281f; --ridge-mid:#122219; --ridge-near:#0c1812; --sun:#f4e3a1;
+  --topo:rgba(143,191,106,.07); --blaze:#f3efe2;
+  --radius:16px; --max:1160px;
+}
+:root[data-theme="light"]{
+  --bg:#f3eddf; --bg-2:#ebe3d0; --card:#fbf7ee; --line:#dccfb3; --line-2:#c9b994;
+  --text:#1e2a21; --muted:#5b6a5d; --accent:#b5651d; --moss:#4a7c3a; --rust:#b5651d; --sky:#3f7f96;
+  --ridge-far:#c9d3b9; --ridge-mid:#9fb38f; --ridge-near:#5d7d55; --sun:#f0b860;
+  --topo:rgba(91,106,60,.10); --blaze:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.topo-tint{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--topo);
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520' fill='none' stroke='%23000' stroke-width='1.2'%3E%3Cpath d='M260 120c70 0 140 40 140 120s-60 150-150 150-140-60-140-140 80-130 150-130z'/%3E%3Cpath d='M262 160c48 0 98 28 98 84s-42 104-108 104-100-42-100-98 60-90 110-90z'/%3E%3Cpath d='M262 200c28 0 58 16 58 46s-26 62-66 62-58-24-58-56 38-52 66-52z'/%3E%3Cpath d='M-20 60c80-30 160 10 240-20s170-60 320-10'/%3E%3Cpath d='M-20 470c90-40 170 20 260-10s180-50 300 0'/%3E%3C/svg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520' fill='none' stroke='%23000' stroke-width='1.2'%3E%3Cpath d='M260 120c70 0 140 40 140 120s-60 150-150 150-140-60-140-140 80-130 150-130z'/%3E%3Cpath d='M262 160c48 0 98 28 98 84s-42 104-108 104-100-42-100-98 60-90 110-90z'/%3E%3Cpath d='M262 200c28 0 58 16 58 46s-26 62-66 62-58-24-58-56 38-52 66-52z'/%3E%3Cpath d='M-20 60c80-30 160 10 240-20s170-60 320-10'/%3E%3Cpath d='M-20 470c90-40 170 20 260-10s180-50 300 0'/%3E%3C/svg%3E");
+  -webkit-mask-size:520px 520px;mask-size:520px 520px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px;position:relative}
+.mono{font-family:"JetBrains Mono",monospace}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em}
+main,footer{position:relative;z-index:1}
+
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+.brand{font-weight:700;font-size:1.15rem;display:flex;align-items:center;gap:.6rem;white-space:nowrap}
+.brand svg{width:30px;height:30px}
+.links{display:flex;gap:1.4rem;font-size:.9rem;color:var(--muted)}
+.links a:hover,.links a.on{color:var(--text)}
+.links a.on{box-shadow:inset 0 -2px 0 var(--accent)}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;display:grid;place-items:center}
+@media(max-width:820px){.links{display:none}}
+
+.hero{position:relative;padding:72px 0 20px;overflow:hidden}
+.hero svg.ridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:120px;color:var(--ridge-far);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;color:var(--accent);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;font-family:"JetBrains Mono",monospace}
+.blaze{display:inline-block;width:7px;height:16px;background:var(--blaze);border-radius:1px;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);line-height:1.1;margin:.6rem 0 .6rem}
+.hero h1 em{font-style:normal;color:var(--moss)}
+.hero .lead{color:var(--muted);max-width:640px;font-size:1.05rem}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:1.2rem;font-family:"JetBrains Mono",monospace;font-size:.75rem;color:var(--muted)}
+.src{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;border:1px solid var(--line-2);background:color-mix(in srgb,var(--card) 70%,transparent)}
+.src i{width:7px;height:7px;border-radius:50%;background:var(--line-2);display:inline-block}
+.src.on{color:var(--text)} .src.on i{background:var(--moss);box-shadow:0 0 8px var(--moss)}
+
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:1.8rem 0 .5rem}
+.tile{border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.2rem;background:color-mix(in srgb,var(--card) 92%,transparent);display:flex;gap:.9rem;align-items:center}
+.tile .ic{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:var(--moss);background:color-mix(in srgb,var(--moss) 14%,transparent);font-size:1.1rem}
+.tile b{display:block;font-family:Fraunces,serif;font-size:1.6rem;line-height:1.1}
+.tile span{color:var(--muted);font-size:.8rem;display:block}
+.tile small{display:block;font-family:"JetBrains Mono",monospace;font-size:.7rem;color:var(--moss);margin-top:2px}
+@media(max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.tiles{grid-template-columns:1fr}}
+
+section{padding:56px 0}
+.bar{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:1.2rem}
+.marker{display:inline-flex;align-items:center;gap:.6rem;font-family:"JetBrains Mono",monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+h2{font-size:clamp(1.8rem,3.6vw,2.4rem);font-weight:700}
+.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:999px;overflow:hidden;background:var(--card)}
+.seg button{font:600 .82rem Inter,sans-serif;padding:.55rem 1rem;background:transparent;color:var(--muted);border:0;cursor:pointer}
+.seg button.on{background:var(--accent);color:#16120a}
+.note{font-family:"JetBrains Mono",monospace;font-size:.78rem;color:var(--accent);border:1px dashed color-mix(in srgb,var(--accent) 45%,transparent);border-radius:12px;padding:.7rem 1rem;margin-bottom:1rem}
+
+.board{display:grid;gap:10px}
+.row{border:1px solid var(--line);border-radius:var(--radius);background:color-mix(in srgb,var(--card) 92%,transparent);overflow:hidden;transition:border-color .2s}
+.row:hover{border-color:color-mix(in srgb,var(--moss) 55%,var(--line))}
+.head{display:grid;grid-template-columns:44px minmax(0,1.5fr) minmax(0,1fr) 130px 22px;gap:14px;align-items:center;padding:14px 16px;cursor:pointer;width:100%;background:none;border:0;color:inherit;text-align:left;font:inherit}
+.rank{font-family:Fraunces,serif;font-size:1.5rem;font-weight:700;color:var(--muted);text-align:center}
+.row.top .rank{color:var(--accent)}
+.name b{font-family:Fraunces,serif;font-size:1.15rem}
+.name .k{display:block;font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.06em;color:var(--a)}
+.hot{font-family:"JetBrains Mono",monospace;font-size:.62rem;font-weight:600;letter-spacing:.08em;color:#16120a;background:var(--accent);padding:2px 7px;border-radius:999px;margin-left:8px;vertical-align:3px}
+.pfs{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.pf{font-family:"JetBrains Mono",monospace;font-size:.64rem;padding:1px 7px;border-radius:999px;border:1px solid var(--line-2);color:var(--muted)}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.nums b{display:block;font-family:Fraunces,serif;font-size:1.15rem}
+.nums span{font-size:.66rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;font-family:"JetBrains Mono",monospace}
+.nums em{font-style:normal;color:var(--moss);font-size:.75rem;font-family:"JetBrains Mono",monospace}
+.score{height:7px;border-radius:999px;background:color-mix(in srgb,var(--line) 80%,transparent);overflow:hidden;margin-bottom:6px}
+.score i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--a),var(--b))}
+.spark{width:100%;height:30px;display:block}
+.chev{color:var(--muted);transition:transform .2s}
+.row.open .chev{transform:rotate(90deg)}
+.detail{display:none;border-top:1px dashed var(--line-2);padding:16px 18px 18px;gap:24px;grid-template-columns:1.3fr 1fr}
+.row.open .detail{display:grid}
+.detail h4{margin:0 0 .6rem;font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;font-weight:600}
+.rel{display:grid;grid-template-columns:110px 1fr 46px;gap:8px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:.75rem;margin-bottom:5px}
+.rel .t{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rel .b{display:block;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--a),var(--b))}
+.rel .n{text-align:right}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.84rem}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+.lk{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.alink{font-size:.82rem;font-weight:600;padding:.45rem .9rem;border-radius:999px;border:1px solid var(--line-2)}
+.alink:hover{border-color:var(--moss);color:var(--moss)}
+.empty{color:var(--muted);font-size:.9rem}
+@media(max-width:760px){
+  .head{grid-template-columns:34px minmax(0,1fr) 22px;row-gap:10px}
+  .nums,.head>.trend{grid-column:1/-1}
+  .chev{grid-row:1;grid-column:3;align-self:start;margin-top:4px}
+  .detail{grid-template-columns:1fr}
+}
+
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.how div{border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.2rem;background:color-mix(in srgb,var(--card) 92%,transparent)}
+.how b{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.12em;color:var(--moss)}
+.how p{margin-top:.4rem;color:var(--muted);font-size:.92rem}
+@media(max-width:760px){.how{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;color:var(--muted);font-size:.88rem;margin-top:20px}
+.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="topo-tint" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 26 L11 12 L16 19 L21 9 L30 26 Z" fill="var(--moss)"/><path d="M21 9 L24.5 15 L22 14 L19.5 16 Z" fill="var(--blaze)"/><circle cx="25" cy="6" r="2.5" fill="var(--accent)"/></svg>
+      ꧁ᙅᗣҜӠᙃ꧂
+    </a>
+    <nav class="links">
+      <a href="index.html#projects">Projects</a>
+      <a href="https://cak3dcreations.vercel.app" target="_blank" rel="noopener">Apps&nbsp;↗</a>
+      <a href="observatory.html" class="on">Observatory</a>
+      <a href="index.html#stats">GitHub</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <button class="icon-btn" id="theme" aria-label="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <svg class="ridge" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 L0 80 L120 50 L210 70 L330 30 L450 64 L560 44 L690 76 L800 36 L930 66 L1040 26 L1170 64 L1290 42 L1440 70 L1440 120 Z" fill="currentColor" opacity=".55"/></svg>
+    <div class="wrap">
+      <div class="eyebrow"><span class="blaze"></span>The Observatory</div>
+      <h1>Which builds are <em>out on the trail</em></h1>
+      <p class="lead">Downloads, visits and live app activity for every build in CAK3D_Creations, ranked by what's actually getting used.</p>
+      <div class="meta" id="meta"></div>
+      <div class="tiles" id="tiles"></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="bar">
+        <div><div class="marker"><span class="blaze"></span>Leaderboard</div><h2>Most active builds</h2></div>
+        <div class="seg" role="tablist" aria-label="Ranking window">
+          <button class="on" data-mode="trend" role="tab" aria-selected="true">Last 30 days</button>
+          <button data-mode="all" role="tab" aria-selected="false">All-time</button>
+        </div>
+      </div>
+      <div id="note"></div>
+      <div class="board" id="board"><div class="empty">Reading the trail log…</div></div>
+    </div>
+  </section>
+
+  <section style="padding-top:10px">
+    <div class="wrap">
+      <div class="marker"><span class="blaze"></span>Field notes</div>
+      <h2 style="margin-bottom:1.2rem">Where the numbers come from</h2>
+      <div class="how">
+        <div><b>DOWNLOADS</b><p>Every APK, firmware image and Windows build attached to a GitHub release, counted per version.</p></div>
+        <div><b>VISITS</b><p>Repo page views from GitHub, plus web app visits once Vercel Web Analytics is on.</p></div>
+        <div><b>LIVE USE</b><p>Apps send one anonymous "opened" ping (app, platform, version and a random install ID), giving daily and weekly active users. No names, no locations.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Host Site for real-CAK3D Creations.</span>
+    <span><a href="index.html">Home</a> · <a href="https://cak3dcreations.vercel.app" target="_blank" rel="noopener">Apps ↗</a> · <a href="https://github.com/real-CAK3D" target="_blank" rel="noopener">GitHub ↗</a></span>
+  </div>
+</footer>
+
+<script>
+// Theme toggle, shared with the home page via localStorage.
+(function(){
+  const root=document.documentElement, t=document.getElementById('theme');
+  const paint=()=>{t.innerHTML=root.dataset.theme==='light'?'<i class="fa-solid fa-moon"></i>':'<i class="fa-solid fa-sun"></i>'};
+  paint();
+  t.onclick=()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}paint()};
+})();
+
+(async function () {
+  const HUB = 'https://cak3dcreations.vercel.app';
+  const PF = { web: 'Web', android: 'Android', windows: 'Windows', pi: 'Raspberry Pi', esp32: 'ESP32' };
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const fmt = (n) => (n == null ? '–' : n >= 10000 ? (n / 1000).toFixed(1) + 'k' : n.toLocaleString());
+  const daysAgo = (n) => new Date(Date.now() - n * 864e5).toISOString().slice(0, 10);
+
+  let data;
+  try {
+    const res = await fetch('data/observatory.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(res.status);
+    data = await res.json();
+  } catch (e) {
+    $('#board').innerHTML = '<div class="empty">No observatory data yet. The first daily snapshot will appear here after the collector runs.</div>';
+    return;
+  }
+
+  // Live usage straight from the ping store when it's connected (fresher than the daily snapshot).
+  try {
+    const live = await fetch(`${HUB}/api/activity`).then((r) => (r.ok ? r.json() : null));
+    if (live) {
+      data.sources.pings = true;
+      data.apps.forEach((a) => { if (live.apps[a.slug]) a.live = live.apps[a.slug]; });
+    }
+  } catch (e) { /* storage not connected yet */ }
+
+  // ---- derive per-app metrics from the snapshot + daily history ----
+  const since30 = daysAgo(30);
+  const apps = data.apps.map((a) => {
+    const h = data.history[a.slug] || {};
+    const days = Object.keys(h).sort();
+    const last30 = days.filter((d) => d >= since30);
+    const snaps = days.filter((d) => h[d].dl != null);
+    const base = snaps.find((d) => d >= since30) ?? snaps[0];
+    const dl = a.github?.downloads.total ?? 0;
+    const dlGain = base && base !== snaps[snaps.length - 1] ? dl - h[base].dl : null;
+    // Until there's a month of snapshots, downloads of releases published in the
+    // last 30 days stand in for the 30-day gain.
+    const dlRecent = (a.github?.downloads.byRelease || []).filter((r) => r.date >= since30).reduce((n, r) => n + r.downloads, 0);
+    const dl30 = dlGain ?? dlRecent;
+    const views30 = last30.reduce((n, d) => n + (h[d].v || 0), 0);
+    const viewsAll = days.reduce((n, d) => n + (h[d].v || 0), 0);
+    const clones30 = last30.reduce((n, d) => n + (h[d].c || 0), 0);
+    const pv30 = a.webStats?.enabled ? a.webStats.pageviews30 : 0;
+    const wau = a.live?.wau ?? null, mau = a.live?.mau ?? null;
+    const spark = [...Array(30)].map((_, i) => { const d = daysAgo(29 - i); return (h[d]?.v || 0) + (h[d]?.dau || 0); });
+    return {
+      ...a, dl, dlGain, views30, viewsAll, clones30, pv30, wau, mau, spark,
+      // Clones are left out of the score: Vercel builds and CI clone repos constantly.
+      trend: dl30 * 4 + views30 + pv30 * 0.3 + (mau || 0) * 6,
+      all: dl * 4 + viewsAll + (a.github?.stars || 0) * 5 + pv30 * 0.3 + (mau || 0) * 6,
+    };
+  });
+
+  // ---- header: sources + tiles ----
+  const ago = (iso) => { const m = Math.round((Date.now() - new Date(iso)) / 6e4); return m < 60 ? `${m}m ago` : m < 1440 ? `${Math.round(m / 60)}h ago` : `${Math.round(m / 1440)}d ago`; };
+  const S = data.sources;
+  $('#meta').innerHTML = `<span>Updated ${ago(data.generatedAt)}</span>` +
+    [['GitHub releases', S.github], ['Repo traffic', S.traffic], ['Web analytics', S.vercel], ['Live app pings', S.pings]]
+      .map(([l, on]) => `<span class="src ${on ? 'on' : ''}" title="${on ? 'Connected' : 'Not connected yet'}"><i></i>${l}</span>`).join('');
+  const sum = (k) => apps.reduce((n, a) => n + (a[k] || 0), 0);
+  const leader = [...apps].sort((a, b) => b.trend - a.trend)[0];
+  $('#tiles').innerHTML = [
+    ['fa-download', fmt(sum('dl')), 'Total downloads', apps.some((a) => a.dlGain) ? `+${fmt(sum('dlGain'))} in 30 days` : 'across every release'],
+    ['fa-eye', fmt(sum('views30')), 'Repo views · 30 days', `${fmt(sum('viewsAll'))} logged so far`],
+    ['fa-person-hiking', S.pings ? fmt(sum('wau')) : '–', 'Weekly active users', S.pings ? `${fmt(sum('mau'))} this month` : 'waiting on app pings'],
+    ['fa-fire', esc(leader?.name ?? '–'), 'Most active now', leader ? '#1 over the last 30 days' : ''],
+  ].map(([ic, b, s, sm]) => `<div class="tile"><span class="ic"><i class="fa-solid ${ic}"></i></span><div><b>${b}</b><span>${s}</span><small>${sm}</small></div></div>`).join('');
+
+  // ---- leaderboard ----
+  const sparkSvg = (vals, a, b, id) => {
+    const max = Math.max(1, ...vals), w = 120, hgt = 30, step = w / (vals.length - 1);
+    const pts = vals.map((v, i) => `${(i * step).toFixed(1)},${(hgt - 3 - (v / max) * (hgt - 6)).toFixed(1)}`);
+    return `<svg class="spark" viewBox="0 0 ${w} ${hgt}" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="g${id}" x1="0" x2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>
+      <polygon points="0,${hgt} ${pts.join(' ')} ${w},${hgt}" fill="url(#g${id})" opacity=".18"/>
+      <polyline points="${pts.join(' ')}" fill="none" stroke="url(#g${id})" stroke-width="1.6" vector-effect="non-scaling-stroke"/></svg>`;
+  };
+
+  function render(mode) {
+    const ranked = [...apps].sort((x, y) => y[mode] - x[mode] || y.dl - x.dl);
+    const top = Math.max(1, ranked[0][mode]);
+    const hasHistory = apps.some((a) => a.dlGain != null);
+    $('#note').innerHTML = mode === 'trend' && !hasHistory
+      ? '<div class="note">Download history is just starting. Until it fills in, this ranking counts downloads of releases published in the last 30 days. Repo views already cover the last 14 days.</div>' : '';
+    $('#board').innerHTML = ranked.map((a, i) => {
+      const isTop = i < 3 && a[mode] > 0;
+      const pf = a.pf.map((p) => `<span class="pf">${PF[p] || esc(p)}</span>`).join('');
+      const live = a.mau != null ? `<div><b>${fmt(a.wau)}</b><span>Weekly users</span></div>` : `<div><b>${fmt(mode === 'trend' ? a.views30 : a.viewsAll)}</b><span>Views ${mode === 'trend' ? '30d' : 'logged'}</span></div>`;
+      const gain = a.dlGain ? ` <em>+${fmt(a.dlGain)}</em>` : '';
+      const rels = (a.github?.downloads.byRelease || []).slice(0, 6);
+      const relMax = Math.max(1, ...rels.map((r) => r.downloads));
+      const links = [`<a class="alink" href="${HUB}/app.html?id=${encodeURIComponent(a.slug)}" target="_blank" rel="noopener">App page ↗</a>`]
+        .concat(a.repo ? [`<a class="alink" href="https://github.com/real-CAK3D/${encodeURIComponent(a.repo)}" target="_blank" rel="noopener">Source ↗</a>`] : [])
+        .concat(a.web ? [`<a class="alink" href="https://${esc(a.web)}" target="_blank" rel="noopener">Open ↗</a>`] : []).join('');
+      return `<article class="row ${isTop ? 'top' : ''}" style="--a:${a.th.a};--b:${a.th.b}">
+        <button class="head" aria-expanded="false">
+          <span class="rank">${i + 1}</span>
+          <span class="name"><span class="k">${esc(a.k)}</span><b>${esc(a.name)}</b>${isTop ? '<span class="hot">HOT</span>' : ''}<span class="pfs">${pf}</span></span>
+          <span class="nums">
+            <div><b>${fmt(a.dl)}${gain}</b><span>Downloads</span></div>
+            ${live}
+            <div><b>${fmt(a.github?.stars)}</b><span>Stars</span></div>
+          </span>
+          <span class="trend"><span class="score"><i style="width:${Math.max(2, (a[mode] / top) * 100).toFixed(1)}%"></i></span>${sparkSvg(a.spark, a.th.a, a.th.b, i)}</span>
+          <span class="chev"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+        <div class="detail">
+          <div><h4>Downloads by release</h4>${rels.length ? rels.map((r) => `<div class="rel"><span class="t" title="${esc(r.tag)}">${esc(r.tag)}</span><span><i class="b" style="width:${Math.max(2, (r.downloads / relMax) * 100)}%"></i></span><span class="n">${fmt(r.downloads)}</span></div>`).join('') : '<div class="empty">No releases with downloads yet.</div>'}</div>
+          <div><h4>Signals</h4><dl class="kv">
+            <dt>Latest release</dt><dd>${esc(a.github?.downloads.latestTag ?? '–')}${a.github?.downloads.latestDate ? ` · ${esc(a.github.downloads.latestDate)}` : ''}</dd>
+            <dt>Last push</dt><dd>${a.github?.pushedAt ? esc(a.github.pushedAt.slice(0, 10)) : '–'}</dd>
+            <dt>Repo views</dt><dd>${fmt(a.views30)} in 30d · ${fmt(a.traffic?.viewsUniq14)} unique / 14d</dd>
+            <dt>Clones</dt><dd>${fmt(a.clones30)} in 30d <span style="color:var(--muted)">(mostly builds and bots)</span></dd>
+            <dt>Web visits</dt><dd>${a.webStats?.enabled ? `${fmt(a.pv30)} pageviews / 30d` : a.web ? 'analytics off' : '–'}</dd>
+            <dt>Live users</dt><dd>${a.mau != null ? `${fmt(a.live.dau)} today · ${fmt(a.wau)} week · ${fmt(a.mau)} month` : 'no pings yet'}</dd>
+            <dt>Top referrers</dt><dd>${(a.traffic?.referrers || []).map((r) => `${esc(r.src)} (${r.n})`).join(', ') || '–'}</dd>
+          </dl><div class="lk">${links}</div></div>
+        </div>
+      </article>`;
+    }).join('');
+    document.querySelectorAll('.row .head').forEach((h) => h.addEventListener('click', () => {
+      const row = h.parentElement; row.classList.toggle('open'); h.setAttribute('aria-expanded', row.classList.contains('open'));
+    }));
+  }
+
+  document.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('.seg button').forEach((x) => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+    render(b.dataset.mode);
+  }));
+  render('trend');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+name: Observatory
+
+# Collects activity stats for every build in the CAK3D_Creations catalog once a
+# day and commits them to data/observatory.json, which observatory.html reads.
+#
+# Optional repository secrets (each source is skipped when its secret is missing):
+#   OBS_GH_TOKEN    fine-grained PAT over all real-CAK3D repos, "Administration: Read-only"
+#                   (GitHub only exposes repo views/clones with that permission)
+#   VERCEL_TOKEN    Vercel access token, for Web Analytics visit counts
+#   VERCEL_TEAM_ID  team_h7Xl4dYyZwWCJ4Xf8iP7hRu8
+# Live app pings need no secret: they come from cak3dcreations.vercel.app/api/activity.
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: observatory
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Collect stats
+        run: node scripts/observatory.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OBS_GH_TOKEN: ${{ secrets.OBS_GH_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_TEAM_ID }}
+
+      # [skip ci] keeps this daily data commit from re-running the
+      # contribution-animations workflow, which builds on every push to main.
+      - name: Commit snapshot
+        run: |
+          git config user.name "observatory-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/observatory.json
+          git diff --cached --quiet || git commit -m "Observatory snapshot $(date -u +%F) [skip ci]"
+          git push
