@@ -236,11 +236,13 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;color:var(--muted)
     const snaps = days.filter((d) => h[d].dl != null);
     const base = snaps.find((d) => d >= since30) ?? snaps[0];
     const dl = a.github?.downloads.total ?? 0;
+    // Downloads gained since the oldest snapshot inside the window.
     const dlGain = base && base !== snaps[snaps.length - 1] ? dl - h[base].dl : null;
-    // Until there's a month of snapshots, downloads of releases published in the
-    // last 30 days stand in for the 30-day gain.
+    // Until the snapshots span the whole 30 days, a gain only covers a few days, so
+    // downloads of releases published in the last 30 days stand in when larger.
+    const covered = snaps.length > 0 && snaps[0] <= since30;
     const dlRecent = (a.github?.downloads.byRelease || []).filter((r) => r.date >= since30).reduce((n, r) => n + r.downloads, 0);
-    const dl30 = dlGain ?? dlRecent;
+    const dl30 = covered ? (dlGain || 0) : Math.max(dlGain || 0, dlRecent);
     const views30 = last30.reduce((n, d) => n + (h[d].v || 0), 0);
     const viewsAll = days.reduce((n, d) => n + (h[d].v || 0), 0);
     const clones30 = last30.reduce((n, d) => n + (h[d].c || 0), 0);
@@ -248,7 +250,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;color:var(--muted)
     const wau = a.live?.wau ?? null, mau = a.live?.mau ?? null;
     const spark = [...Array(30)].map((_, i) => { const d = daysAgo(29 - i); return (h[d]?.v || 0) + (h[d]?.dau || 0); });
     return {
-      ...a, dl, dlGain, views30, viewsAll, clones30, pv30, wau, mau, spark,
+      ...a, dl, dlGain, covered, tracked: snaps[0], views30, viewsAll, clones30, pv30, wau, mau, spark,
       // Clones are left out of the score: Vercel builds and CI clone repos constantly.
       trend: dl30 * 4 + views30 + pv30 * 0.3 + (mau || 0) * 6,
       all: dl * 4 + viewsAll + (a.github?.stars || 0) * 5 + pv30 * 0.3 + (mau || 0) * 6,
@@ -263,8 +265,12 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;color:var(--muted)
       .map(([l, on]) => `<span class="src ${on ? 'on' : ''}" title="${on ? 'Connected' : 'Not connected yet'}"><i></i>${l}</span>`).join('');
   const sum = (k) => apps.reduce((n, a) => n + (a[k] || 0), 0);
   const leader = [...apps].sort((a, b) => b.trend - a.trend)[0];
+  const allCovered = apps.every((a) => a.covered);
+  const trackedSince = apps.map((a) => a.tracked).filter(Boolean).sort()[0];
+  const gainNote = apps.some((a) => a.dlGain)
+    ? `+${fmt(sum('dlGain'))} ${allCovered ? 'in 30 days' : `since ${trackedSince}`}` : 'across every release';
   $('#tiles').innerHTML = [
-    ['fa-download', fmt(sum('dl')), 'Total downloads', apps.some((a) => a.dlGain) ? `+${fmt(sum('dlGain'))} in 30 days` : 'across every release'],
+    ['fa-download', fmt(sum('dl')), 'Total downloads', gainNote],
     ['fa-eye', fmt(sum('views30')), 'Repo views · 30 days', `${fmt(sum('viewsAll'))} logged so far`],
     ['fa-person-hiking', S.pings ? fmt(sum('wau')) : '–', 'Weekly active users', S.pings ? `${fmt(sum('mau'))} this month` : 'waiting on app pings'],
     ['fa-fire', esc(leader?.name ?? '–'), 'Most active now', leader ? '#1 over the last 30 days' : ''],
@@ -283,9 +289,8 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;color:var(--muted)
   function render(mode) {
     const ranked = [...apps].sort((x, y) => y[mode] - x[mode] || y.dl - x.dl);
     const top = Math.max(1, ranked[0][mode]);
-    const hasHistory = apps.some((a) => a.dlGain != null);
-    $('#note').innerHTML = mode === 'trend' && !hasHistory
-      ? '<div class="note">Download history is just starting. Until it fills in, this ranking counts downloads of releases published in the last 30 days. Repo views already cover the last 14 days.</div>' : '';
+    $('#note').innerHTML = mode === 'trend' && !allCovered
+      ? `<div class="note">Download history started ${esc(trackedSince ?? 'today')}. Until it covers a full month, this ranking also counts downloads of releases published in the last 30 days.</div>` : '';
     $('#board').innerHTML = ranked.map((a, i) => {
       const isTop = i < 3 && a[mode] > 0;
       const pf = a.pf.map((p) => `<span class="pf">${PF[p] || esc(p)}</span>`).join('');

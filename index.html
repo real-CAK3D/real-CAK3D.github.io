@@ -579,7 +579,11 @@ footer{margin-top:40px;color:var(--muted);font-size:.9rem}
     const ranked=d.apps.map(a=>{
       const h=d.history[a.slug]||{};
       const views=Object.keys(h).filter(k=>k>=since).reduce((n,k)=>n+(h[k].v||0),0);
-      const dl=(a.github?.downloads.byRelease||[]).filter(r=>r.date>=since).reduce((n,r)=>n+r.downloads,0);
+      const snaps=Object.keys(h).filter(k=>h[k].dl!=null).sort();
+      const base=snaps.find(k=>k>=since)??snaps[0], total=a.github?.downloads.total||0;
+      const gain=base&&base!==snaps[snaps.length-1]?total-h[base].dl:0;
+      const recent=(a.github?.downloads.byRelease||[]).filter(r=>r.date>=since).reduce((n,r)=>n+r.downloads,0);
+      const dl=snaps.length&&snaps[0]<=since?gain:Math.max(gain,recent);
       return {name:a.name,score:dl*4+views+(a.live?.mau||0)*6,dl:a.github?.downloads.total||0};
     }).filter(a=>a.score>0).sort((a,b)=>b.score-a.score).slice(0,3);
     if(!ranked.length) return;
