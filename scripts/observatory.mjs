@@ -36,9 +36,12 @@ async function loadCatalog() {
   vm.runInNewContext(src, sandbox);
   const { PROJECTS, R } = sandbox.window.CAK3D;
   return PROJECTS.map((p) => {
-    const repoLink = p.links.find((l) => l.u.startsWith(R) && !/\/releases/.test(l.u)) || p.links.find((l) => l.u.startsWith(R));
-    const repo = repoLink ? repoLink.u.slice(R.length).split('/')[0] : null;
-    const webLink = p.links.find((l) => /^https:\/\//.test(l.u) && !l.u.startsWith('https://github.com/'));
+    // The catalog keeps the repo on `repo` (its Source links aren't shown on the
+    // site); older catalogs only have it inside a link.
+    const repoLink = p.links.find((l) => l.u.startsWith(R));
+    const repo = p.repo || (repoLink ? repoLink.u.slice(R.length).split('/')[0] : null);
+    // Only hosted web apps count as "web" (not Discord invites and the like).
+    const webLink = p.links.find((l) => /^https:\/\/[^/]+\.(vercel\.app|github\.io)\b/.test(l.u));
     const web = webLink ? new URL(webLink.u).host : null;
     return { slug: p.slug, name: p.name, k: p.k, pf: [...p.pf], th: { ...p.th }, repo, web };
   });
