@@ -202,7 +202,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;color:var(--muted)
 
 (async function () {
   const HUB = 'https://cak3dcreations.vercel.app';
-  const PF = { web: 'Web', android: 'Android', windows: 'Windows', pi: 'Raspberry Pi', esp32: 'ESP32' };
+  const PF = { web: 'Web', android: 'Android', windows: 'Windows', mac: 'macOS', linux: 'Linux', pi: 'Raspberry Pi', esp32: 'ESP32', discord: 'Discord' };
   const $ = (s) => document.querySelector(s);
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const fmt = (n) => (n == null ? '–' : n >= 10000 ? (n / 1000).toFixed(1) + 'k' : n.toLocaleString());
@@ -298,9 +298,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;color:var(--muted)
       const gain = a.dlGain ? ` <em>+${fmt(a.dlGain)}</em>` : '';
       const rels = (a.github?.downloads.byRelease || []).slice(0, 6);
       const relMax = Math.max(1, ...rels.map((r) => r.downloads));
-      const links = [`<a class="alink" href="${HUB}/app.html?id=${encodeURIComponent(a.slug)}" target="_blank" rel="noopener">App page ↗</a>`]
-        .concat(a.repo ? [`<a class="alink" href="https://github.com/real-CAK3D/${encodeURIComponent(a.repo)}" target="_blank" rel="noopener">Source ↗</a>`] : [])
-        .concat(a.web ? [`<a class="alink" href="https://${esc(a.web)}" target="_blank" rel="noopener">Open ↗</a>`] : []).join('');
+      const links = [`<a class="alink" href="${HUB}/app.html?id=${encodeURIComponent(a.slug)}" target="_blank" rel="noopener">App page ↗</a>`]        .concat(a.web ? [`<a class="alink" href="https://${esc(a.web)}" target="_blank" rel="noopener">Open ↗</a>`] : []).join('');
       return `<article class="row ${isTop ? 'top' : ''}" style="--a:${a.th.a};--b:${a.th.b}">
         <button class="head" aria-expanded="false">
           <span class="rank">${i + 1}</span>
